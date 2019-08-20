@@ -1,0 +1,62 @@
+.portfolio_bg {
+    @include background(url('../img/portfolio/portfolio_bg.jpg'));
+
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-size: auto;
+    z-index: -1;
+}
+
+.content {
+
+    &_portfolio {
+        position: relative;
+        height: 70%;
+
+        &_inner {
+            height: 100%;
+        }
+
+        &_slider {
+            height: 100%;
+        }
+
+        &_slide {
+            display: block;
+            position: relative;
+            height: 100%;
+
+            &_link {
+                outline: none;
+            }
+
+            &_img {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 80%;
+                margin: auto;
+                object-fit: contain;
+                transition: 1s;
+
+                &:hover {
+                    filter: brightness(1.5);
+                }
+            }
+        }
+    }
+}
+
+.slick-track {
+    height: 100%;
+}
+
+.slick-list {
+    height: 100%;
+}
+
+.slick-slide {
+    outline: none;
+}

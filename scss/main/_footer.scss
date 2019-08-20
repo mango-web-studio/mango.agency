@@ -1,0 +1,87 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 15%;
+    padding: 0 4.6875% 1.042%;
+    color: $white_1;
+
+    .social {
+        width: 28%;
+
+        &_list {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        &_item {
+            width: 6%;
+        }
+        
+        &_link {
+
+            &:hover .social_icon {
+                fill: $purple_1;
+                transition: 1s;
+            }
+        }
+
+        &_icon {
+            display: block;
+            width: 95%;
+            margin: auto;
+            fill: $gray_3;
+        }
+    }
+
+    .contacts {
+        display: flex;
+        justify-content: flex-end;
+        width: 70%;
+
+        .tel,
+        .mail {
+            @include font-fluid(18px, 20px, 'Rubik-Light');
+            
+            margin-right: 9%;
+            color: $gray_3;
+            transition: 1s;
+
+            &:hover {
+                color: $purple_1;
+            }
+        }
+    }
+    
+    .language {
+
+        &_list {
+            display: flex;
+            justify-content: space-between;
+            width: 20%;
+
+            .active {
+                color: $purple_1;
+            }
+        }
+
+        &_item {
+            
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+
+        &_link {
+            @include font-fluid(18px, 20px, 'Rubik-Light');
+
+            color: $gray_3;
+            transition: 1s;
+
+            &:hover {
+                color: $purple_1;
+            }
+        }
+    }
+}

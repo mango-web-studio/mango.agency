@@ -1,0 +1,160 @@
+.mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0;
+    transition: 1s;
+
+    &_menu_checkbox {
+        display: none;
+    }
+
+    &_header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 15%;
+        padding: 20px 20px 0;
+    }
+
+    &_menu_label {
+        @include font-fluid(70px, 70px, 'Rubik-Regular');
+
+        position: relative;
+        padding-left: 7%;
+        color: $white_1;
+
+        .menu_ico {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 30%;
+            display: flex;
+            justify-content: space-around;
+
+            span {
+                position: relative;
+                width: 2px;
+                background-color: $white_1;
+            }
+
+            &_1 {
+                height: 70%;
+                top: 3px;
+            }
+            
+            &_2 {
+                height: 80%;
+            }
+            
+            &_3 {
+                height: 90%;
+                top: 4px;
+            }
+        }
+    }
+
+    &_logo {
+        width: 25%;
+
+        &_img {
+            width: 100%;
+            fill: $white_1;
+        }
+    }
+
+    &_content {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        height: 85%;
+        padding: 0 20px 35px;
+        overflow: hidden;
+    }
+
+    &_title {
+        overflow: hidden;
+        transition: 1s;
+
+        svg {
+            position: relative;
+            top: 15px;
+        }
+    }
+    
+    &_contacts {
+        transition: 1s;
+        
+        a {
+            @include font(16px, 18px, 'Rubik-Light');
+
+            display: block;
+            color: $white_1;
+            margin-top: 10px;
+        }
+    }
+
+    &_social {
+
+        &_list {
+            width: 22%;
+            margin-left: auto;
+            margin-bottom: 10%;
+            transition: 1s;
+        }
+
+        &_item {
+            margin-bottom: 40px;
+
+            &:last-child {
+                margin: 0;
+            }
+        }
+    }
+
+    &_social_link {
+
+        svg {
+            fill: $white_1;
+        }
+    }
+}
+
+
+// screen width <=767px (portrait)
+@media only screen and (max-width: 767px) {
+ 
+    .mobile {
+        z-index: 0;
+        opacity: 1;
+    }
+
+    #mobile_menu_checkbox:checked {
+
+        + .mobile {
+            opacity: 0;
+        }
+
+        + .mobile {
+
+            .mobile_title {
+                position: relative;
+                transform: translateX(-150%);
+            }
+            
+            .mobile_contacts {
+                position: relative;
+                transform: translateY(100%);
+            }
+            
+            .mobile_social_list {
+                position: relative;
+                transform: translateX(300%);
+            }
+        }
+    }
+}

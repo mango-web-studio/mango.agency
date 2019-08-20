@@ -1,0 +1,204 @@
+.menu_checkbox {
+    display: none;
+    
+    &:checked + .container {
+        background-color: $black_3;
+
+        .header .nav {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .header .menu_label_close {
+            opacity: 1;
+        }
+        
+        .content_inner {
+            opacity: 0;
+        }
+
+        .menu {
+            opacity: 1;
+            z-index: 1;
+    
+            .menu_link {
+                
+                &::before {
+                    height: 20%;
+                }
+    
+                &:hover::before {
+                    height: 60%;
+                    border-color: $white_1;
+                }
+    
+                &:hover::after {
+                    height: 60%;
+                }
+    
+                .title {
+                    top: 0;
+                }
+    
+                .subtitle_wrap {
+                    top: 0;
+                }
+            }
+        }
+    }
+}
+
+.page-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    animation-name: animate-in-bg;
+    animation-fill-mode: forwards;
+    animation-duration: 2s;
+    animation-delay: .2s;
+    will-change: transform;
+
+    &_inner {
+        @include background(url(../img/paint_bg_trnsp.png));
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: 100% 100%;
+        z-index: 1;
+        transition: 1s;
+    }
+
+    & canvas {
+        width: 100%!important;
+        height: 100%!important;
+        filter: hue-rotate(463deg) saturate(600%);
+    }
+}
+
+.container {    
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: $black_1;
+
+    .content {
+        position: relative;
+        height: 70%;
+        padding: 0 4.6875%;
+        transition: 1s;
+        
+        &_inner {
+            height: 100%;
+            width: 100%;
+            transition: 1s;
+    
+            .title {
+                position: relative;
+                color: $white_1;
+                height: 100%;
+                text-transform: uppercase;
+                pointer-events: none;
+    
+                .design_word {
+                    position: absolute;
+                    width: 23%;
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-120%);
+    
+                    &_1 {
+                        width: 100%;
+                        animation: design-1 1.5s;
+                    }
+                    
+                    &_2 {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        animation: design-2 1.5s;
+                    }
+                }
+    
+                p {
+                    @include font-fluid(90px, 100px, 'Rubik-Bold');
+    
+                    display: flex;
+                    
+                    &:nth-child(2) {
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-60.5%, -60%);
+                        width: 57%;
+                        overflow: hidden;
+                        color: $gray_1;
+                        -webkit-text-fill-color: transparent;
+                        -webkit-text-stroke: 1px $white_1;
+                        letter-spacing: 0.44em;
+                        animation: text-2 1s steps(10, end);
+                    }
+                
+                    &:nth-child(3) {
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-40%, 20%);
+                        letter-spacing: 3px;
+                        // animation: text-3 2s;
+    
+                        span {
+                            animation: appear 2s;
+                        }
+                    }
+                    
+                    &:nth-child(4) {
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(150%, 20%);
+                        letter-spacing: 3px;
+                        color: $gray_1;
+                        // animation: text-3 2s;
+    
+                        span {
+                            animation: appear 2s;
+                        }
+                    }
+                }
+            }
+    
+            .subtitle {
+                @include font-fluid(18px, 20px, 'Rubik-Light');
+    
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-200%, 160%);
+                width: 21.88%;
+                color: $gray_3;
+                text-align: right;
+                pointer-events: none;
+                animation: text-4 1.5s;
+            }
+        }
+    }
+}
+
+
+// screen width <=767px
+@media only screen and (max-width: 767px) {
+ 
+    .container {
+        visibility: hidden;
+        position: absolute;
+    }
+}

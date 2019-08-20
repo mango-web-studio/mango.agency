@@ -1,0 +1,140 @@
+.menu {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    z-index: -1;
+    transition: 1s;
+    
+    &_content {
+        position: relative;
+        height: 100%;
+        padding: 0 4.6875%;
+    }
+
+    &_list {
+        display: flex;
+        justify-content: space-between;
+        height: 100%;
+    }
+
+    &_item {
+        padding: 2.87% 0 5.75%;
+        
+        &:nth-child(2) {
+            .title {
+                transition-delay: 0.1s;
+            }
+        }
+
+        &:nth-child(3) {
+            .title {
+                transition-delay: 0.2s;
+            }
+        }
+
+        &:nth-child(4) {
+            .title {
+                transition-delay: 0.3s;
+            }
+        }
+
+        &:nth-child(5) {
+            .title {
+                transition-delay: 0.4s;
+            }
+        }
+    }
+
+    &_link {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        text-transform: uppercase;
+        color: $white_1;
+
+        &::before {
+            content: "";
+            position: absolute;
+            right: 100%;
+            bottom: 0;
+            height: 0;
+            border-left: 2px solid $gray_2;
+            transition: 1s;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            right: 100%;
+            bottom: 0;
+            height: 0;
+            border-left: 2px solid $purple_1;
+            transition: 1.5s;
+        }
+
+        &:hover .title {
+            color: $purple_1;
+            margin-top: -10%;
+        }
+
+        .title {
+            @include font-fluid(30px, 36px, 'Rubik-Bold');
+
+            position: relative;
+            top: -100%;
+            transition: 1s;
+        }
+        
+        .subtitle_wrap {
+            position: relative;
+            top: -100%;
+            margin-bottom: 12%;
+            text-align: left;
+            transition: 1s;
+        }
+
+        .subtitle {
+            @include font-fluid(22px, 26px, 'Rubik-Regular');
+
+            display: inline-block;
+            width: 6ch;
+            color: $gray_2;
+            overflow: hidden;
+            white-space: nowrap;
+            transition: 0.5s steps(5);
+
+            &_mango {
+                @include font-fluid(22px, 26px, 'Rubik-Regular');
+
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 0;
+                overflow: hidden;
+                color: $gray_2;
+                transition: 0.5s steps(7);
+                
+                &_letter {
+                    color: $purple_1;
+                }
+            }
+        }
+        
+        &:hover .subtitle {
+            width: 0;
+        }
+
+        &:not(:hover) .subtitle {
+            transition-delay: 0.5s;
+        }
+        
+        &:hover .subtitle_mango {
+            width: 8ch;
+            transition-delay: 0.5s;
+        }
+    }
+}

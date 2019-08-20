@@ -1,0 +1,71 @@
+@keyframes design-1 {
+    from {
+        opacity: 0;
+        transform: translate(-20%, -100%);
+    }
+}
+
+@keyframes design-2 {
+    from {
+        transform: translate(20%, 90%);
+        opacity: 0;
+    }
+}
+
+@keyframes text-1 {
+    from {
+        opacity: 0;
+        letter-spacing: 0.4em;
+    }
+}
+
+@keyframes text-2 {
+    0% {
+        width: 0;
+        opacity: 0;
+    }
+    1% {
+        border-right: 0.07em solid $gray_3;
+    }
+    99% {
+        border-right: 0.07em solid $gray_3;
+    }
+    100% {
+        border: none;
+    }
+}
+
+@keyframes text-3 {
+    from {
+        opacity: 0;
+        margin-top: 5%;
+    }
+}
+
+@keyframes text-4 {
+    from {
+        opacity: 0;
+        margin-left: -10%;
+    }
+}
+
+@keyframes animate-in-bg {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes appear {
+    0% {
+        transform: rotate(-45deg) translateY(20px);
+        opacity: 0;
+        filter: blur(20px);
+    }
+    100% {
+        opacity: 1;
+        filter: blur(0px);
+    }
+}
