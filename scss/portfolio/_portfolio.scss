@@ -38,11 +38,12 @@
                 transform: translate(-50%, -50%);
                 width: 80%;
                 margin: auto;
-                object-fit: contain;
+                opacity: 0.8;
                 transition: 1s;
-
+                
                 &:hover {
                     filter: brightness(1.5);
+                    opacity: 1;
                 }
             }
         }

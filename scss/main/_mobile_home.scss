@@ -6,13 +6,11 @@
     width: 100%;
     z-index: -1;
     opacity: 0;
+    visibility: hidden;
     transition: 1s;
 
-    &_menu_checkbox {
-        display: none;
-    }
-
     &_header {
+        position: relative;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -26,6 +24,7 @@
         position: relative;
         padding-left: 7%;
         color: $white_1;
+        transition: 1s;
 
         .menu_ico {
             position: absolute;
@@ -73,6 +72,7 @@
         align-items: flex-end;
         height: 85%;
         padding: 0 20px 35px;
+        transition: 1s;
         overflow: hidden;
     }
 
@@ -125,21 +125,37 @@
 }
 
 
-// screen width <=767px (portrait)
-@media only screen and (max-width: 767px) {
+// screen width <=500px (portrait)
+@media only screen and (max-width: 500px) {
  
-    .mobile {
-        z-index: 0;
-        opacity: 1;
+    body, h1, h2, h3, h4, h5, h6, p, ul, li {
+        overflow: hidden;
     }
+    
+    .mobile {
+        z-index: 1;
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    #menu_checkbox:checked {
+        
+        ~ .mobile {
+            background-color: $black_3;
 
-    #mobile_menu_checkbox:checked {
-
-        + .mobile {
-            opacity: 0;
-        }
-
-        + .mobile {
+            .mobile_menu_label {
+                opacity: 0;
+                z-index: -1;
+            }
+            
+            .mobile_content {
+                opacity: 0;
+                visibility: hidden;
+            }
+            
+            .mobile_menu {
+                opacity: 1;
+            }
 
             .mobile_title {
                 position: relative;

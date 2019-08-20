@@ -88,6 +88,7 @@
     height: 100%;
     width: 100%;
     background-color: $black_1;
+    transition: 1s;
 
     .content {
         position: relative;
@@ -194,8 +195,8 @@
 }
 
 
-// screen width <=767px
-@media only screen and (max-width: 767px) {
+// screen width <=500px
+@media only screen and (max-width: 500px) {
  
     .container {
         visibility: hidden;

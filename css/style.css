@@ -216,6 +216,7 @@ input {
   height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.3);
+  transition: 1s;
 }
 
 .container .content {
@@ -317,7 +318,7 @@ input {
   animation: text-4 1.5s;
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 500px) {
   .container {
     visibility: hidden;
     position: absolute;
@@ -680,14 +681,12 @@ input {
   width: 100%;
   z-index: -1;
   opacity: 0;
+  visibility: hidden;
   transition: 1s;
 }
 
-.mobile_menu_checkbox {
-  display: none;
-}
-
 .mobile_header {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -700,6 +699,7 @@ input {
   position: relative;
   padding-left: 7%;
   color: #ffffff;
+  transition: 1s;
 }
 
 .mobile_menu_label .menu_ico {
@@ -747,6 +747,7 @@ input {
   align-items: flex-end;
   height: 85%;
   padding: 0 20px 35px;
+  transition: 1s;
   overflow: hidden;
 }
 
@@ -790,62 +791,63 @@ input {
   fill: #ffffff;
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 500px) {
+  body, h1, h2, h3, h4, h5, h6, p, ul, li {
+    overflow: hidden;
+  }
   .mobile {
-    z-index: 0;
+    z-index: 1;
+    opacity: 1;
+    visibility: visible;
+  }
+  #menu_checkbox:checked ~ .mobile {
+    background-color: rgba(0, 0, 0, 0.55);
+  }
+  #menu_checkbox:checked ~ .mobile .mobile_menu_label {
+    opacity: 0;
+    z-index: -1;
+  }
+  #menu_checkbox:checked ~ .mobile .mobile_content {
+    opacity: 0;
+    visibility: hidden;
+  }
+  #menu_checkbox:checked ~ .mobile .mobile_menu {
     opacity: 1;
   }
-  #mobile_menu_checkbox:checked + .mobile {
-    opacity: 0;
-  }
-  #mobile_menu_checkbox:checked + .mobile .mobile_title {
+  #menu_checkbox:checked ~ .mobile .mobile_title {
     position: relative;
     transform: translateX(-150%);
   }
-  #mobile_menu_checkbox:checked + .mobile .mobile_contacts {
+  #menu_checkbox:checked ~ .mobile .mobile_contacts {
     position: relative;
     transform: translateY(100%);
   }
-  #mobile_menu_checkbox:checked + .mobile .mobile_social_list {
+  #menu_checkbox:checked ~ .mobile .mobile_social_list {
     position: relative;
     transform: translateX(300%);
   }
 }
 
 .mobile_menu {
-  position: fixed;
-  top: 0;
+  position: absolute;
+  bottom: 0;
   left: 0;
-  height: 100%;
+  height: 85%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.55);
   z-index: -1;
   opacity: 0;
   transition: 1s;
 }
 
-.mobile_menu_header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 15%;
-  padding: 20px 20px 0;
-}
-
-.mobile_menu_logo {
-  width: 25%;
-}
-
-.mobile_menu_logo_img {
-  width: 100%;
-  fill: #ffffff;
-}
-
 .mobile_menu_label_close {
   font: 3.64583vw/3.64583vw "Rubik-Regular";
-  position: relative;
+  position: absolute;
+  left: 20px;
   padding-left: 6%;
   color: #ffffff;
+  opacity: 0;
+  z-index: -1;
+  transition: 1s;
 }
 
 .mobile_menu_label_close svg {
@@ -857,7 +859,10 @@ input {
 }
 
 .mobile_menu_content {
-  height: 70%;
+  position: absolute;
+  bottom: 15%;
+  height: 80%;
+  width: 100%;
 }
 
 .mobile_menu_list {
@@ -900,12 +905,13 @@ input {
 }
 
 .mobile_menu_footer {
+  position: absolute;
+  bottom: 0;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  height: 15%;
+  height: 20%;
   padding: 0 20px 35px;
-  overflow: hidden;
 }
 
 .mobile_menu_social_list {
@@ -930,42 +936,49 @@ input {
   fill: #7B7B7B;
 }
 
-@media only screen and (max-width: 767px) {
-  #mobile_menu_checkbox:checked ~ .mobile_menu {
-    z-index: 0;
+@media only screen and (max-width: 500px) {
+  body, h1, h2, h3, h4, h5, h6, p, ul, li {
+    overflow: hidden;
+  }
+  #menu_checkbox:checked ~ .mobile .mobile_menu {
+    z-index: 1;
     opacity: 1;
   }
-  #mobile_menu_checkbox:checked ~ .mobile_menu .mobile_menu_item {
+  #menu_checkbox:checked ~ .mobile .mobile_menu_label_close {
+    opacity: 1;
+    z-index: 1;
+  }
+  #menu_checkbox:checked ~ .mobile .mobile_menu_item {
     transform: translateX(0);
   }
-  #mobile_menu_checkbox:checked ~ .mobile_menu .mobile_menu_item:nth-child(2) {
+  #menu_checkbox:checked ~ .mobile .mobile_menu_item:nth-child(2) {
     transition-delay: 0.2s;
   }
-  #mobile_menu_checkbox:checked ~ .mobile_menu .mobile_menu_item:nth-child(3) {
+  #menu_checkbox:checked ~ .mobile .mobile_menu_item:nth-child(3) {
     transition-delay: 0.4s;
   }
-  #mobile_menu_checkbox:checked ~ .mobile_menu .mobile_menu_item:nth-child(4) {
+  #menu_checkbox:checked ~ .mobile .mobile_menu_item:nth-child(4) {
     transition-delay: 0.6s;
   }
-  #mobile_menu_checkbox:checked ~ .mobile_menu .mobile_menu_item:nth-child(5) {
+  #menu_checkbox:checked ~ .mobile .mobile_menu_item:nth-child(5) {
     transition-delay: 0.8s;
   }
-  #mobile_menu_checkbox:checked ~ .mobile_menu .mobile_menu_social_list {
+  #menu_checkbox:checked ~ .mobile .mobile_menu_social_list {
     transform: translateX(0);
   }
-  #mobile_menu_checkbox:checked ~ .mobile_menu .mobile_menu_social_item {
+  #menu_checkbox:checked ~ .mobile .mobile_menu_social_item {
     transform: translateX(0);
   }
-  #mobile_menu_checkbox:checked ~ .mobile_menu .mobile_menu_social_item:nth-child(2) {
+  #menu_checkbox:checked ~ .mobile .mobile_menu_social_item:nth-child(2) {
     transition-delay: 0.2s;
   }
-  #mobile_menu_checkbox:checked ~ .mobile_menu .mobile_menu_social_item:nth-child(3) {
+  #menu_checkbox:checked ~ .mobile .mobile_menu_social_item:nth-child(3) {
     transition-delay: 0.4s;
   }
-  #mobile_menu_checkbox:checked ~ .mobile_menu .mobile_menu_social_item:nth-child(4) {
+  #menu_checkbox:checked ~ .mobile .mobile_menu_social_item:nth-child(4) {
     transition-delay: 0.6s;
   }
-  #mobile_menu_checkbox:checked ~ .mobile_menu .mobile_menu_social_item:nth-child(5) {
+  #menu_checkbox:checked ~ .mobile .mobile_menu_social_item:nth-child(5) {
     transition-delay: 0.8s;
   }
 }
@@ -1013,12 +1026,13 @@ input {
   transform: translate(-50%, -50%);
   width: 80%;
   margin: auto;
-  object-fit: contain;
+  opacity: 0.8;
   transition: 1s;
 }
 
 .content_portfolio_slide_img:hover {
   filter: brightness(1.5);
+  opacity: 1;
 }
 
 .slick-track {
