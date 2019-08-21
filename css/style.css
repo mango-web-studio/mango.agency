@@ -143,7 +143,7 @@ input {
   opacity: 1;
 }
 
-.menu_checkbox:checked + .container .content_inner {
+.menu_checkbox:checked + .container .content_main_inner {
   opacity: 0;
 }
 
@@ -199,6 +199,7 @@ input {
   width: 100%;
   height: 100%;
   background-size: 100% 100%;
+  background-color: rgba(0, 0, 0, 0.3);
   z-index: 1;
   transition: 1s;
 }
@@ -215,24 +216,23 @@ input {
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
   transition: 1s;
 }
 
-.container .content {
+.container .content_main {
   position: relative;
   height: 70%;
   padding: 0 4.6875%;
   transition: 1s;
 }
 
-.container .content_inner {
+.container .content_main_inner {
   height: 100%;
   width: 100%;
   transition: 1s;
 }
 
-.container .content_inner .title {
+.container .content_main_inner .title {
   position: relative;
   color: #ffffff;
   height: 100%;
@@ -240,7 +240,7 @@ input {
   pointer-events: none;
 }
 
-.container .content_inner .title .design_word {
+.container .content_main_inner .title .design_word {
   position: absolute;
   width: 23%;
   left: 0;
@@ -248,12 +248,12 @@ input {
   transform: translateY(-120%);
 }
 
-.container .content_inner .title .design_word_1 {
+.container .content_main_inner .title .design_word_1 {
   width: 100%;
   animation: design-1 1.5s;
 }
 
-.container .content_inner .title .design_word_2 {
+.container .content_main_inner .title .design_word_2 {
   position: absolute;
   top: 0;
   left: 0;
@@ -261,12 +261,12 @@ input {
   animation: design-2 1.5s;
 }
 
-.container .content_inner .title p {
+.container .content_main_inner .title p {
   font: 4.6875vw/5.20833vw "Rubik-Bold";
   display: flex;
 }
 
-.container .content_inner .title p:nth-child(2) {
+.container .content_main_inner .title p:nth-child(2) {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -280,7 +280,7 @@ input {
   animation: text-2 1s steps(10, end);
 }
 
-.container .content_inner .title p:nth-child(3) {
+.container .content_main_inner .title p:nth-child(3) {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -288,11 +288,11 @@ input {
   letter-spacing: 3px;
 }
 
-.container .content_inner .title p:nth-child(3) span {
+.container .content_main_inner .title p:nth-child(3) span {
   animation: appear 2s;
 }
 
-.container .content_inner .title p:nth-child(4) {
+.container .content_main_inner .title p:nth-child(4) {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -301,11 +301,11 @@ input {
   color: #717171;
 }
 
-.container .content_inner .title p:nth-child(4) span {
+.container .content_main_inner .title p:nth-child(4) span {
   animation: appear 2s;
 }
 
-.container .content_inner .subtitle {
+.container .content_main_inner .subtitle {
   font: 0.9375vw/1.04167vw "Rubik-Light";
   position: absolute;
   left: 50%;
@@ -766,21 +766,22 @@ input {
 }
 
 .mobile_contacts a {
-  font: 1.6rem/1.8rem "Rubik-Light";
+  font: 1.2rem/2rem "Rubik-Light";
   display: block;
   color: #ffffff;
   margin-top: 10px;
+  text-align: right;
 }
 
 .mobile_social_list {
-  width: 22%;
+  width: 20%;
   margin-left: auto;
-  margin-bottom: 10%;
+  margin-bottom: 25%;
   transition: 1s;
 }
 
 .mobile_social_item {
-  margin-bottom: 40px;
+  margin-bottom: 50px;
 }
 
 .mobile_social_item:last-child {
@@ -889,7 +890,7 @@ input {
   top: 70%;
   width: 18%;
   height: 1px;
-  background-color: #c9c9c9;
+  background-color: #2F2F2F;
 }
 
 .mobile_menu_link .subtitle {
@@ -932,12 +933,12 @@ input {
 .mobile_menu_social_icon {
   display: block;
   margin-left: auto;
-  width: 50%;
+  width: 40%;
   fill: #7B7B7B;
 }
 
 @media only screen and (max-width: 500px) {
-  body, h1, h2, h3, h4, h5, h6, p, ul, li {
+  body, ul, li {
     overflow: hidden;
   }
   #menu_checkbox:checked ~ .mobile .mobile_menu {
@@ -1045,4 +1046,85 @@ input {
 
 .slick-slide {
   outline: none;
+}
+
+.contacnts_bg {
+  background-image: url("../img/contacts/contacts_bg.jpg");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center right;
+  z-index: -1;
+}
+
+.content_contacts {
+  width: 100%;
+  height: 85%;
+  padding: 0 4.6875% 4.6875%;
+}
+
+.content_contacts_inner {
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+}
+
+.content_contacts_inner .social_list {
+  width: 1.6%;
+  height: 85%;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+}
+
+.content_contacts_inner .social_link:hover .social_icon {
+  fill: #AC54E2;
+}
+
+.content_contacts_inner .social_icon {
+  fill: #ffffff;
+  transition: 1s;
+}
+
+.content_contacts_inner .description {
+  margin-left: 10%;
+  color: #ffffff;
+}
+
+.content_contacts_inner .description_address, .content_contacts_inner .description_phone, .content_contacts_inner .description_time_work {
+  margin-bottom: 23%;
+}
+
+.content_contacts_inner .description_address:last-child, .content_contacts_inner .description_phone:last-child, .content_contacts_inner .description_time_work:last-child {
+  margin: 0;
+}
+
+.content_contacts_inner .description_address .title, .content_contacts_inner .description_phone .title, .content_contacts_inner .description_time_work .title {
+  font: 1.5625vw/1.82292vw "Rubik-Bold";
+  margin-bottom: 6%;
+}
+
+.content_contacts_inner .description_address .specification, .content_contacts_inner .description_phone .specification, .content_contacts_inner .description_time_work .specification {
+  font: 0.9375vw/1.30208vw "Rubik-Regular";
+}
+
+.content_contacts_inner .description_address .specification a,
+.content_contacts_inner .description_address .specification p,
+.content_contacts_inner .description_address .specification span, .content_contacts_inner .description_phone .specification a,
+.content_contacts_inner .description_phone .specification p,
+.content_contacts_inner .description_phone .specification span, .content_contacts_inner .description_time_work .specification a,
+.content_contacts_inner .description_time_work .specification p,
+.content_contacts_inner .description_time_work .specification span {
+  display: block;
+  color: #ffffff;
+}
+
+.content_contacts_inner .description_address .specification .workday, .content_contacts_inner .description_phone .specification .workday, .content_contacts_inner .description_time_work .specification .workday {
+  margin-bottom: 9%;
 }
