@@ -1,3 +1,34 @@
+.menu_checkbox:checked ~ .container {
+
+    .menu {
+        opacity: 1;
+        z-index: 1;
+
+        .menu_link {
+            
+            &::before {
+                height: 20%;
+            }
+
+            &:hover::before {
+                height: 60%;
+                border-color: $white_1;
+            }
+
+            &:hover::after {
+                height: 60%;
+            }
+
+            .title {
+                top: 0;
+            }
+
+            .subtitle_wrap {
+                top: 0;
+            }
+        }
+    }
+}
 .menu {
     position: absolute;
     left: 0;
@@ -82,7 +113,8 @@
         }
 
         .title {
-            @include font-fluid(30px, 36px, 'Rubik-Bold');
+            // @include font-fluid(30px, 36px, 'Rubik-Bold');
+            @include font(30px, 36px, 'Rubik-Bold');
 
             position: relative;
             top: -100%;
@@ -98,7 +130,8 @@
         }
 
         .subtitle {
-            @include font-fluid(22px, 26px, 'Rubik-Regular');
+            // @include font-fluid(22px, 26px, 'Rubik-Regular');
+            @include font(22px, 26px, 'Rubik-Regular');
 
             display: inline-block;
             width: 6ch;
@@ -108,7 +141,8 @@
             transition: 0.5s steps(5);
 
             &_mango {
-                @include font-fluid(22px, 26px, 'Rubik-Regular');
+                // @include font-fluid(22px, 26px, 'Rubik-Regular');
+                @include font(22px, 26px, 'Rubik-Regular');
 
                 position: absolute;
                 top: 0;

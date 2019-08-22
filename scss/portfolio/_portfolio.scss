@@ -8,6 +8,17 @@
     z-index: -1;
 }
 
+#menu_checkbox {
+
+    &:checked ~ .container {
+
+        .content_portfolio_slider {
+            filter: brightness(0.3);
+            opacity: 0.7;
+        }
+    }
+}
+
 .content {
 
     &_portfolio {
@@ -15,20 +26,60 @@
         height: 70%;
 
         &_inner {
+            position: relative;
             height: 100%;
         }
 
         &_slider {
             height: 100%;
+            transition: 1s;
         }
 
         &_slide {
             display: block;
             position: relative;
             height: 100%;
+            margin: 0 2%;
+
 
             &_link {
                 outline: none;
+
+                &:hover img {
+                    filter: brightness(1.5);
+                    opacity: 1;
+                }
+            }
+
+            &_title_wrap {
+                position: absolute;
+                left: 10%;
+                bottom: 5%;
+            }
+            
+            &_title {
+                @include font(73px, 76px, 'Rubik-Bold');
+
+                text-transform: uppercase;
+
+                span {
+                    display: block;
+                    color: $white_1;
+
+                    &:first-child {
+                        color: $pink_1;
+                    }
+                }
+            }
+
+            &_subtitle {
+                @include font(15px, 22px, 'Rubik-Regular');
+
+                color: $white_1;
+
+                img {
+                    display: inline-block;
+                }
             }
 
             &_img {
@@ -36,15 +87,10 @@
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
-                width: 80%;
+                width: 100%;
                 margin: auto;
                 opacity: 0.8;
                 transition: 1s;
-                
-                &:hover {
-                    filter: brightness(1.5);
-                    opacity: 1;
-                }
             }
         }
     }
@@ -60,4 +106,23 @@
 
 .slick-slide {
     outline: none;
+}
+
+
+
+// screen width <=1366px
+@media only screen and (max-width: 1366px) {
+    
+    .content_portfolio_slide_title {
+        @include font(45px, 50px, 'Rubik-Bold');
+    }
+    
+    .content_portfolio_slide_subtitle {
+        @include font(12px, 16px, 'Rubik-Regular');
+    }
+
+    .content_portfolio_slide_title_wrap {
+        left: 10%;
+        bottom: 0;
+    }
 }

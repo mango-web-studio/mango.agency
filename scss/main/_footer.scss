@@ -36,14 +36,15 @@
     }
 
     .contacts {
+        // @include font-fluid(18px, 20px, 'Rubik-Light');
+        @include font(18px, 20px, 'Rubik-Light');
+
         display: flex;
         justify-content: flex-end;
         width: 70%;
 
         .tel,
         .mail {
-            @include font-fluid(18px, 20px, 'Rubik-Light');
-            
             margin-right: 9%;
             color: $gray_3;
             transition: 1s;
@@ -74,7 +75,6 @@
         }
 
         &_link {
-            @include font-fluid(18px, 20px, 'Rubik-Light');
 
             color: $gray_3;
             transition: 1s;
@@ -84,4 +84,14 @@
             }
         }
     }
+}
+
+
+// screen width <=1366px
+@media only screen and (max-width: 1366px) {
+
+    .footer .contacts {
+        @include font(12px, 14px, 'Rubik-Light');
+    }
+
 }

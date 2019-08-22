@@ -19,7 +19,8 @@
     }
 
     &_menu_label {
-        @include font-fluid(70px, 70px, 'Rubik-Regular');
+        // @include font-fluid(70px, 70px, 'Rubik-Regular');
+        @include font(12px, 14px, 'Rubik-Regular');
 
         position: relative;
         padding-left: 7%;

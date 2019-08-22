@@ -9,7 +9,8 @@
     transition: 1s;
 
     &_label_close {
-        @include font-fluid(70px, 70px, 'Rubik-Regular');
+        // @include font-fluid(70px, 70px, 'Rubik-Regular');
+        @include font(12px, 14px, 'Rubik-Regular');
 
         position: absolute;
         left: 20px;
@@ -65,14 +66,16 @@
     &_link {
 
         .subtitle {
-            @include font-fluid(70px, 70px, 'Rubik-Light');
+            // @include font-fluid(70px, 70px, 'Rubik-Light');
+            @include font(12px, 14px, 'Rubik-Light');
 
             color: $gray_2;
             margin-bottom: 5px;
         }
         
         .title {
-            @include font-fluid(150px, 150px, 'Rubik-Bold');
+            // @include font-fluid(150px, 150px, 'Rubik-Bold');
+            @include font(22px, 24px, 'Rubik-Bold');
 
             color: $white_1;
             text-transform: uppercase;

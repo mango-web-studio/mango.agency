@@ -23,8 +23,8 @@
         .social {
             
             &_list {
-                width: 1.6%;
-                height: 85%;
+                // width: 1.6%;
+                height: 80%;
                 display: flex;
                 flex-direction: column-reverse;
                 justify-content: space-between;
@@ -40,30 +40,38 @@
             &_icon {
                 fill: $white_1;
                 transition: 1s;
+                width: 27px;
             }
         }
 
         .description {
             margin-left: 10%;
             color: $white_1;
+
+            height: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             
             &_address,
             &_phone,
             &_time_work {
-                margin-bottom: 23%;
+                // margin-bottom: 23%;
                 
                 &:last-child {
                     margin: 0;
                 }
                 
                 .title {
-                    @include font-fluid(30px, 35px, 'Rubik-Bold');
+                    // @include font-fluid(30px, 36px, 'Rubik-Bold');
+                    @include font(30px, 36px, 'Rubik-Bold');
 
                     margin-bottom: 6%;
                 }
 
                 .specification {
-                    @include font-fluid(18px, 25px, 'Rubik-Regular');
+                    // @include font-fluid(18px, 27px, 'Rubik-Regular');
+                    @include font(18px, 27px, 'Rubik-Regular');
                     
                     a,
                     p,
@@ -72,10 +80,35 @@
                         color: $white_1;
                     }
 
+                    a:hover {
+                        text-decoration: underline;
+                    }
+
                     .workday {
-                        margin-bottom: 9%;
+                        margin-bottom: 5%;
                     }
                 }
+            }
+        }
+    }
+}
+
+
+// screen width <=1366px
+@media only screen and (max-width: 1366px) {
+ 
+    .content_contacts_inner .description {
+
+        &_address,
+        &_phone,
+        &_time_work {
+            
+            .title {
+                @include font(24px, 28px, 'Rubik-Bold');
+            }
+            
+            .specification {
+                @include font(14px, 18px, 'Rubik-Regular');
             }
         }
     }

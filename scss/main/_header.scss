@@ -1,3 +1,15 @@
+.menu_checkbox:checked ~ .container {
+
+    .header .nav {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .header .menu_label_close {
+        opacity: 1;
+    }
+}
+
 .header {
     position: relative;
     display: flex;
@@ -31,7 +43,8 @@
             }
 
             &_close {
-                @include font-fluid(18px, 20px, 'Rubik-Regular');
+                // @include font-fluid(18px, 20px, 'Rubik-Regular');
+                @include font(18px, 20px, 'Rubik-Regular');
 
                 position: absolute;
                 left: 0;
@@ -99,7 +112,8 @@
         }
 
         &_span {
-            @include font-fluid(18px, 24px, 'Rubik-Regular');
+            // @include font-fluid(18px, 24px, 'Rubik-Regular');
+            @include font(18px, 20px, 'Rubik-Regular');
 
             color: $white_1;
             transition: 1s;
@@ -123,7 +137,8 @@
         }
 
         &_link {
-            @include font-fluid(18px, 24px, 'Rubik-Light');
+            // @include font-fluid(18px, 24px, 'Rubik-Light');
+            @include font(18px, 20px, 'Rubik-Light');
 
             color: $gray_3;
             white-space: nowrap;
@@ -147,4 +162,32 @@
             fill: $white_1;
         }
     }
+}
+
+
+// screen width <=1366px
+@media only screen and (max-width: 1366px) {
+    
+    .header { 
+
+        .menu_span {
+            @include font(12px, 14px, 'Rubik-Regular');
+        }
+        
+        .nav_link {
+            @include font(12px, 14px, 'Rubik-Light');
+        }
+        
+        .menu_label_close {
+            @include font(12px, 14px, 'Rubik-Regular');
+
+            padding-left: 1%;
+        }
+
+        .menu_ico {
+            width: 20%;
+        }
+    }
+
+    
 }
