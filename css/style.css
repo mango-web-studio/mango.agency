@@ -14,7 +14,6 @@ body, h1, h2, h3, h4, h5, h6, p, ul, li {
 
 body {
   font-family: 'Helvetica Neue', Arial, sans-serif;
-  overflow: hidden;
 }
 
 ul, li {
@@ -538,6 +537,15 @@ input {
   }
 }
 
+@media only screen and (max-width: 850px) {
+  .header .menu_label_close {
+    padding-left: 2%;
+  }
+  .footer .contacts {
+    font: 1rem/1.4rem "Rubik-Light";
+  }
+}
+
 .menu_checkbox:checked ~ .container .menu {
   opacity: 1;
   z-index: 1;
@@ -638,7 +646,7 @@ input {
 
 .menu_link:hover .title {
   color: #AC54E2;
-  margin-top: -10%;
+  margin-top: -20px;
 }
 
 .menu_link .title {
@@ -651,7 +659,7 @@ input {
 .menu_link .subtitle_wrap {
   position: relative;
   top: -100%;
-  margin-bottom: 12%;
+  margin-bottom: 30px;
   text-align: left;
   transition: 1s;
 }
@@ -692,6 +700,42 @@ input {
 .menu_link:hover .subtitle_mango {
   width: 8ch;
   transition-delay: 0.5s;
+}
+
+@media only screen and (max-width: 1366px) {
+  .container .menu .title {
+    font: 2.4rem/2.8rem "Rubik-Bold";
+  }
+  .container .menu .subtitle,
+  .container .menu .subtitle_mango {
+    font: 1.6rem/2rem "Rubik-Regular";
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .container .menu .title {
+    font: 1.6rem/1.8rem "Rubik-Bold";
+  }
+  .container .menu .subtitle_wrap {
+    margin-bottom: 20px;
+  }
+  .container .menu .subtitle,
+  .container .menu .subtitle_mango {
+    font: 1.4rem/1.8rem "Rubik-Regular";
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .container .menu .title {
+    font: 1.4rem/1.6rem "Rubik-Bold";
+  }
+  .container .menu .subtitle_wrap {
+    margin-bottom: 10px;
+  }
+  .container .menu .subtitle,
+  .container .menu .subtitle_mango {
+    font: 1.2rem/1.6rem "Rubik-Regular";
+  }
 }
 
 .mobile {
@@ -1014,13 +1058,16 @@ input {
   position: fixed;
   height: 100%;
   width: 100%;
-  background-size: auto;
   z-index: -1;
 }
 
 #menu_checkbox:checked ~ .container .content_portfolio_slider {
-  filter: brightness(0.3);
+  filter: brightness(0.4);
   opacity: 0.7;
+}
+
+#menu_checkbox:checked ~ .container .content_portfolio_slide_title_wrap {
+  opacity: 0;
 }
 
 .content_portfolio {
@@ -1058,6 +1105,8 @@ input {
   position: absolute;
   left: 10%;
   bottom: 5%;
+  opacity: 1;
+  transition: 1s;
 }
 
 .content_portfolio_slide_title {
@@ -1119,6 +1168,14 @@ input {
   }
 }
 
+.menu_checkbox:checked ~ .container .content_contacts_inner .social_list {
+  opacity: 0;
+}
+
+.menu_checkbox:checked ~ .container .content_contacts_inner .description {
+  opacity: 0;
+}
+
 .contacnts_bg {
   background-image: url("../img/contacts/contacts_bg.jpg");
   background-repeat: no-repeat;
@@ -1130,11 +1187,12 @@ input {
   left: 0;
   width: 100%;
   height: 100%;
-  background-position: center right;
+  background-position: center center;
   z-index: -1;
 }
 
 .content_contacts {
+  position: relative;
   width: 100%;
   height: 85%;
   padding: 0 4.6875% 4.6875%;
@@ -1151,6 +1209,7 @@ input {
   display: flex;
   flex-direction: column-reverse;
   justify-content: space-between;
+  transition: 1s;
 }
 
 .content_contacts_inner .social_link:hover .social_icon {
@@ -1170,6 +1229,7 @@ input {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: 1s;
 }
 
 .content_contacts_inner .description_address:last-child, .content_contacts_inner .description_phone:last-child, .content_contacts_inner .description_time_work:last-child {
@@ -1204,6 +1264,78 @@ input {
   margin-bottom: 5%;
 }
 
+.content_contacts .menu {
+  padding-bottom: 4.6875%;
+}
+
+.mobile_contacts .mobile_content {
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.mobile_contacts .mobile_content .social_list {
+  display: flex;
+  flex-direction: column-reverse;
+  margin-top: 25%;
+}
+
+.mobile_contacts .mobile_content .social_item {
+  margin-bottom: 50px;
+}
+
+.mobile_contacts .mobile_content .social_item:first-child {
+  margin: 0;
+}
+
+.mobile_contacts .mobile_content .social_link {
+  margin: 0;
+}
+
+.mobile_contacts .mobile_content .social_icon {
+  width: 20px;
+  fill: #ffffff;
+}
+
+.mobile_contacts .mobile_content .description {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-left: 45px;
+  margin-top: 25%;
+}
+
+.mobile_contacts .mobile_content .description_address, .mobile_contacts .mobile_content .description_phone {
+  margin-bottom: 40px;
+}
+
+.mobile_contacts .mobile_content .description_time_work .workday {
+  margin-bottom: 20px;
+}
+
+.mobile_contacts .mobile_content .description .title {
+  font: 1.4rem/1.6rem "Rubik-Bold";
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.mobile_contacts .mobile_content .description .specification {
+  font: 1.2rem/1.6rem "Rubik-Light";
+  color: #ffffff;
+}
+
+.mobile_contacts .mobile_content .description .specification span {
+  display: block;
+}
+
+.mobile_contacts .mobile_content .description .specification a {
+  text-align: left;
+  margin: 0;
+}
+
+.mobile_contacts .mobile_menu_link {
+  text-align: left;
+}
+
 @media only screen and (max-width: 1366px) {
   .content_contacts_inner .description_address .title, .content_contacts_inner .description_phone .title, .content_contacts_inner .description_time_work .title {
     font: 2.4rem/2.8rem "Rubik-Bold";
@@ -1211,4 +1343,58 @@ input {
   .content_contacts_inner .description_address .specification, .content_contacts_inner .description_phone .specification, .content_contacts_inner .description_time_work .specification {
     font: 1.4rem/1.8rem "Rubik-Regular";
   }
+}
+
+@media only screen and (max-width: 850px) {
+  .content_contacts_inner .social_icon {
+    width: 20px;
+  }
+  .content_contacts_inner .description_address .title, .content_contacts_inner .description_phone .title, .content_contacts_inner .description_time_work .title {
+    font: 1.8rem/2.4rem "Rubik-Bold";
+  }
+  .content_contacts_inner .description_address .specification, .content_contacts_inner .description_phone .specification, .content_contacts_inner .description_time_work .specification {
+    font: 1.2rem/1.6rem "Rubik-Regular";
+  }
+}
+
+.main {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vh;
+  height: 100vw;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transform-origin: right top;
+  transform: rotate(-90deg) translateY(-100vh);
+  background-color: #f5f55e;
+}
+
+.main::-webkit-scrollbar {
+  display: none;
+}
+
+.main div {
+  width: 100%;
+  height: 100vh;
+  transform-origin: right top;
+  transform: rotate(90deg) translateX(100vh);
+  font-size: 40px;
+  text-align: center;
+}
+
+.main div:first-child {
+  background-color: lightcoral;
+}
+
+.main div:nth-child(2) {
+  background-color: lightseagreen;
+}
+
+.main div:nth-child(3) {
+  background-color: lightgreen;
+}
+
+.main div:last-child {
+  background-color: lightblue;
 }

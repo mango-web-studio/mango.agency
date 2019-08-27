@@ -109,7 +109,7 @@
 
         &:hover .title {
             color: $purple_1;
-            margin-top: -10%;
+            margin-top: -20px;
         }
 
         .title {
@@ -124,7 +124,7 @@
         .subtitle_wrap {
             position: relative;
             top: -100%;
-            margin-bottom: 12%;
+            margin-bottom: 30px;
             text-align: left;
             transition: 1s;
         }
@@ -169,6 +169,72 @@
         &:hover .subtitle_mango {
             width: 8ch;
             transition-delay: 0.5s;
+        }
+    }
+}
+
+
+// screen width <=1366px
+@media only screen and (max-width: 1366px) {
+    
+    .container {
+        
+        .menu { 
+
+            .title {
+                @include font(24px, 28px, 'Rubik-Bold');
+            }
+
+            .subtitle,
+            .subtitle_mango {
+                @include font(16px, 20px, 'Rubik-Regular');
+            }
+        }
+    }
+}
+
+// screen width <=850px
+@media only screen and (max-width: 850px) {
+    
+    .container {
+        
+        .menu { 
+
+            .title {
+                @include font(16px, 18px, 'Rubik-Bold');
+            }
+
+            .subtitle_wrap {
+                margin-bottom: 20px;
+            }
+
+            .subtitle,
+            .subtitle_mango {
+                @include font(14px, 18px, 'Rubik-Regular');
+            }
+        }
+    }
+}
+
+// screen width <=600px
+@media only screen and (max-width: 600px) {
+    
+    .container {
+        
+        .menu { 
+
+            .title {
+                @include font(14px, 16px, 'Rubik-Bold');
+            }
+
+            .subtitle_wrap {
+                margin-bottom: 10px;
+            }
+
+            .subtitle,
+            .subtitle_mango {
+                @include font(12px, 16px, 'Rubik-Regular');
+            }
         }
     }
 }

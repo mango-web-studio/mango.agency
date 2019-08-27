@@ -93,5 +93,16 @@
     .footer .contacts {
         @include font(12px, 14px, 'Rubik-Light');
     }
+}
 
+// screen width <=850px
+@media only screen and (max-width: 850px) {
+
+    .header .menu_label_close {
+        padding-left: 2%;
+    }
+
+    .footer .contacts {
+        @include font(10px, 14px, 'Rubik-Light');
+    }
 }

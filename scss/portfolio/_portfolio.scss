@@ -4,7 +4,6 @@
     position: fixed;
     height: 100%;
     width: 100%;
-    background-size: auto;
     z-index: -1;
 }
 
@@ -13,8 +12,12 @@
     &:checked ~ .container {
 
         .content_portfolio_slider {
-            filter: brightness(0.3);
+            filter: brightness(0.4);
             opacity: 0.7;
+        }
+
+        .content_portfolio_slide_title_wrap {
+            opacity: 0;
         }
     }
 }
@@ -55,6 +58,8 @@
                 position: absolute;
                 left: 10%;
                 bottom: 5%;
+                opacity: 1;
+                transition: 1s;
             }
             
             &_title {
