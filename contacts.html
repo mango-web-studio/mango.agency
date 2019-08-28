@@ -438,5 +438,18 @@
 			</div>
 		</div>
 	</div>
+
+
+	<script type="text/javascript" src='js/jquery-3.4.1.min.js'></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			const checkbox = $("#menu_checkbox");
+			$(document).on('keydown', function(e) {
+				if (e.keyCode == 27) {
+					checkbox.prop("checked", false);
+				}
+			});
+		});
+	</script>
 </body>
 </html>

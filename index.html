@@ -551,5 +551,14 @@
     </script>
     <script type="9458c4f32f688462410da228-text/javascript" src='js/app.js'></script>
 	<script src="js/rocket-loader.min.js" data-cf-settings="9458c4f32f688462410da228-|49" defer=""></script>
+
+	<script type="text/javascript">
+		const checkbox = $("#menu_checkbox");
+		$(document).on('keydown', function(e) {
+			if (e.keyCode == 27) {
+				checkbox.prop("checked", false);
+			}
+		});
+	</script>
 </body>
 </html>

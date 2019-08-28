@@ -6,6 +6,7 @@
 @import "fonts.scss";
 // MAIN + Menu
 @import "main/container_content.scss";
+// General (header, footer, menu)
 @import "main/header.scss";
 @import "main/footer.scss";
 @import "main/menu.scss";
@@ -16,3 +17,5 @@
 @import "portfolio/portfolio.scss";
 // Contacts
 @import "contacts/contacts.scss";
+// About us
+@import "about_us/about_us.scss";

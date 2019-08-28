@@ -130,7 +130,7 @@
 // screen width <=500px (portrait)
 @media only screen and (max-width: 500px) {
  
-    body, h1, h2, h3, h4, h5, h6, p, ul, li {
+    body, ul, li {
         overflow: hidden;
     }
     
