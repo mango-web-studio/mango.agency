@@ -6,7 +6,7 @@
     width: 100%;
     z-index: -1;
     opacity: 0;
-    visibility: hidden;
+    overflow: hidden;
     transition: 1s;
 
     &_header {
@@ -127,17 +127,128 @@
 }
 
 
+.mobile_content {
+
+    &_portfolio {
+        position: relative;
+        height: 70%;
+
+        &_inner {
+            position: relative;
+            height: 100%;
+        }
+
+        &_slider {
+            height: 100%;
+            transition: 1s;
+        }
+
+        &_slide {
+            display: block;
+            position: relative;
+            height: 100%;
+            margin: 0 2%;
+
+            &_link {
+                outline: none;
+
+                &:hover img {
+                    filter: brightness(1.5);
+                    opacity: 1;
+                }
+            }
+
+            &_title_wrap {
+                position: absolute;
+                left: 10%;
+                bottom: 5%;
+                opacity: 1;
+                transition: 1s;
+            }
+            
+            &_title {
+                @include font(73px, 76px, 'Rubik-Bold');
+
+                text-transform: uppercase;
+
+                span {
+                    display: block;
+                    color: $white_1;
+
+                    &:first-child {
+                        color: $pink_1;
+                    }
+                }
+            }
+
+            &_subtitle {
+                @include font(15px, 22px, 'Rubik-Regular');
+
+                color: $white_1;
+
+                img {
+                    display: inline-block;
+                }
+            }
+
+            &_img {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 100%;
+                margin: auto;
+                opacity: 0.8;
+                transition: 1s;
+            }
+        }
+
+    }
+}
+
+.mobile_footer_portfolio {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 15%;
+    padding: 0 20px 35px;
+    transition: 0.5s;
+
+    &_social {
+        
+        &_list {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        &_item {
+            width: 6%;
+        }
+
+        &_icon {
+            display: block;
+            margin: auto;
+            width: 100%;
+            fill: $gray_5;
+        }
+    }
+}
+
+
 // screen width <=500px (portrait)
 @media only screen and (max-width: 500px) {
- 
-    body, ul, li {
-        overflow: hidden;
-    }
     
     .mobile {
         z-index: 1;
         opacity: 1;
-        visibility: visible;
+    }
+
+    .slick-current .mobile_content_portfolio_slide_img {
+        filter: brightness(1.5);
+        opacity: 1;
     }
     
     #menu_checkbox:checked {
@@ -152,7 +263,14 @@
             
             .mobile_content {
                 opacity: 0;
-                visibility: hidden;
+
+                &_portfolio_slide_title_wrap {
+                    opacity: 0;
+                }
+            }
+
+            .mobile_footer_portfolio {
+                opacity: 0;
             }
             
             .mobile_menu {

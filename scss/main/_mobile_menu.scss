@@ -121,10 +121,6 @@
 
 // screen width <=500px
 @media only screen and (max-width: 500px) {
-
-    body, ul, li {
-        overflow: hidden;
-    }
     
     #menu_checkbox:checked {
         
