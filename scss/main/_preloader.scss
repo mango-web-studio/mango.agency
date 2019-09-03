@@ -5,7 +5,7 @@
     width: 100%;
     height: 100%;
     background-color: $black_0;
-    z-index: 1;
+    z-index: 10;
 
     &_img_wrap {
         position: absolute;
@@ -50,5 +50,16 @@
         left: 50%;
         transform: translate(-50%, -50%);
         color: $black_4;
+    }
+}
+
+
+// screen width <=768px
+@media only screen and (max-width: 768px) {
+
+    .preloader {
+        .progress-percentage {
+            @include font(200px, 200px, 'Roboto-Bold');
+        }
     }
 }

@@ -10,6 +10,12 @@
 </head>
   
 <body>
+	<!-- Preloader -->
+	<div id="preloader" class="preloader">
+		<div class="preloader_img_wrap">
+			<img src="img/preloader/m_preloader.png" alt="M" class="preloader_img">
+		</div>
+	</div>
 	<!-- MAIN_CONTAINER -->
 	<div class="page-background">
 		<div class="page-background_inner"></div>
@@ -45,7 +51,7 @@
 						<a class="nav_link" href="portfolio.html" title="">Портфолио</a>
 					</li>
 					<li class="nav_item">
-						<a class="nav_link" href="#" title="">О нас</a>
+						<a class="nav_link" href="about_us.html" title="">О нас</a>
 					</li>
 					<li class="nav_item">
 						<a class="nav_link" href="./contacts.html" title="">Контакты</a>
@@ -100,7 +106,7 @@
 				<div class="menu_content">
 					<ul class="menu_list">
 						<li class="menu_item">
-							<a href="#" class="menu_link">
+							<a href="about_us.html" class="menu_link">
 								<div class="subtitle_wrap">
 									<p class="subtitle">M-01</p>
 									<p class="subtitle_mango">
@@ -457,7 +463,7 @@
 			<div class="mobile_menu_content">
 				<ul class="mobile_menu_list">
 					<li class="mobile_menu_item">
-						<a href="#" class="mobile_menu_link">
+						<a href="about_us.html" class="mobile_menu_link">
 							<p class="subtitle">M-01</p>
 							<p class="title">О нас</p>
 						</a>
@@ -545,20 +551,18 @@
 	</div>
 
 
-	<script type="text/javascript" src='js/jquery-3.4.1.min.js'></script>
 	<script type="9458c4f32f688462410da228-text/javascript">
         var BUFFA = {"ajax":"https:\/\/www.danielebuffa.me\/wp-admin\/admin-ajax.php","assets_url":"https:\/\/www.danielebuffa.me\/wp-content\/themes\/buffa\/dist\/assets","loaded_assets":[],"plyr_instances":[],"vertical_carousel_instances":[],"tooltip_instances":[],"image_reveal_instances":[],"works_slider_instances":[],"tilt_instances":[],"words_carousel_instances":[],"single_project_instances":[],"scroll_detector_instances":[]};
     </script>
     <script type="9458c4f32f688462410da228-text/javascript" src='js/app.js'></script>
 	<script src="js/rocket-loader.min.js" data-cf-settings="9458c4f32f688462410da228-|49" defer=""></script>
 
-	<script type="text/javascript">
-		const checkbox = $("#menu_checkbox");
-		$(document).on('keydown', function(e) {
-			if (e.keyCode == 27) {
-				checkbox.prop("checked", false);
-			}
-		});
-	</script>
+	<script type="text/javascript" src='js/jquery-3.4.1.min.js'></script>
+	<!-- Slider -->
+	<script type="text/javascript" src="slick/slick.min.js"></script>
+	<script type="text/javascript" src="js/slider.js"></script>
+	<!-- Preloader plugin -->
+	<script type="text/javascript" src="js/plugin.js"></script>
+	<script type="text/javascript" src="js/preloader.js"></script>
 </body>
 </html>

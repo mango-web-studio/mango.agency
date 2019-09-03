@@ -19,10 +19,6 @@
 		<div class="preloader_img_wrap">
 			<img src="img/preloader/m_preloader.png" alt="M" class="preloader_img">
 		</div>
-		<!-- <svg class="preloader_ellipse" width="148" height="148" viewBox="0 0 148 148" fill="none" xmlns="http://www.w3.org/2000/svg">
-			<circle cx="74" cy="74" r="73" stroke="#5F5F5F" stroke-width="2"/>
-		</svg> -->
-		<!-- <p class="preloader_percent">35</p> -->
 	</div>
 	<!-- CHECKBOX open-close menu -->
 	<input type="checkbox" id="menu_checkbox" class="menu_checkbox">
@@ -523,75 +519,11 @@
 
 
 	<script type="text/javascript" src='js/jquery-3.4.1.min.js'></script>
+	<!-- Slider -->
 	<script type="text/javascript" src="slick/slick.min.js"></script>
+	<script type="text/javascript" src="js/slider.js"></script>
 	<!-- Preloader plugin -->
 	<script type="text/javascript" src="js/plugin.js"></script>
-
-	<script>
-		$(document).ready(function(){
-			$('.content_portfolio_slider').slick({
-				centerMode: true,
-				centerPadding: '20%',
-				arrows: false,
-				infinite: false,
-				respondTo: 'window',
-				easing:'linear',
-				slidesToShow: 1
-			});
-			$('.mobile_content_portfolio_slider').slick({
-				swipeToSlide: true,
-				centerMode: true,
-				centerPadding: '10px',
-				arrows: false,
-				infinite: false,
-				respondTo: 'window',
-				slidesToShow: 1
-			});
-
-			// To smooth the scroll of the slider
-			const slider = $(".content_portfolio_slider");
-			let scrollCount = null;
-			let scroll= null;
-			slider.on('wheel', (function(e) {
-				e.preventDefault();
-
-				clearTimeout(scroll);
-				scroll = setTimeout(function(){scrollCount=0;}, 30);
-				if(scrollCount) return 0;
-				scrollCount=1;
-
-				if (e.originalEvent.deltaY > 0) {
-					$(this).slick('slickNext');
-				} else {
-					$(this).slick('slickPrev');
-				}
-			}));
-
-			// Press Esc to close the menu
-			const checkbox = $("#menu_checkbox");
-			$(document).on('keydown', function(e) {
-				if (e.keyCode == 27) {
-					checkbox.prop("checked", false);
-				}
-			});
-
-			// Preloader
-			$(".preloader_img_wrap").circularProgress({
-				color: "#C25FFF",
-				line_width: 5,
-				height: "150px",
-				width: "150px",
-				percent: 0,
-				// counter_clockwise: true,
-				starting_position: 50
-			}).circularProgress('animate', 100, 2000);
-		});
-
-		// To make the preloader disappear
-		$(window).on('load', function () {
-			var $preloader = $('#preloader');
-			$preloader.delay(1800).fadeOut('slow');
-		});
-	</script>
+	<script type="text/javascript" src="js/preloader.js"></script>
 </body>
 </html>

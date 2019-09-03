@@ -10,6 +10,12 @@
 </head>
   
 <body>
+	<!-- Preloader -->
+	<div id="preloader" class="preloader">
+		<div class="preloader_img_wrap">
+			<img src="img/preloader/m_preloader.png" alt="M" class="preloader_img">
+		</div>
+	</div>
 	<!-- CHECKBOX open-close menu -->
 	<input type="checkbox" id="menu_checkbox" class="menu_checkbox">
 	<!-- Contacts background -->
@@ -43,7 +49,7 @@
 						<a class="nav_link" href="portfolio.html" title="">Портфолио</a>
 					</li>
 					<li class="nav_item">
-						<a class="nav_link" href="#" title="">О нас</a>
+						<a class="nav_link" href="about_us.html" title="">О нас</a>
 					</li>
 					<li class="nav_item">
 						<a class="nav_link active" href="./contacts.html" title="">Контакты</a>
@@ -161,7 +167,7 @@
 				<div class="menu_content">
 					<ul class="menu_list">
 						<li class="menu_item">
-							<a href="#" class="menu_link">
+							<a href="about_us.html" class="menu_link">
 								<div class="subtitle_wrap">
 									<p class="subtitle">M-01</p>
 									<p class="subtitle_mango">
@@ -352,7 +358,7 @@
 			<div class="mobile_menu_content">
 				<ul class="mobile_menu_list">
 					<li class="mobile_menu_item">
-						<a href="#" class="mobile_menu_link">
+						<a href="about_us.html" class="mobile_menu_link">
 							<p class="subtitle">M-01</p>
 							<p class="title">О нас</p>
 						</a>
@@ -441,15 +447,11 @@
 
 
 	<script type="text/javascript" src='js/jquery-3.4.1.min.js'></script>
-	<script type="text/javascript">
-		$(document).ready(function() {
-			const checkbox = $("#menu_checkbox");
-			$(document).on('keydown', function(e) {
-				if (e.keyCode == 27) {
-					checkbox.prop("checked", false);
-				}
-			});
-		});
-	</script>
+	<!-- Slider -->
+	<script type="text/javascript" src="slick/slick.min.js"></script>
+	<script type="text/javascript" src="js/slider.js"></script>
+	<!-- Preloader plugin -->
+	<script type="text/javascript" src="js/plugin.js"></script>
+	<script type="text/javascript" src="js/preloader.js"></script>
 </body>
 </html>

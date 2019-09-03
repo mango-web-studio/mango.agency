@@ -159,6 +159,7 @@
     };
     // Put percentage or custom text inside progress circle
     function insertText(scope) {
+        global_settings.percent = (global_settings.percent > 100) ? 100 : global_settings.percent;
         $(".progress-percentage").text(Math.round(global_settings.percent));
     }
     // create canvas

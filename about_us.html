@@ -12,7 +12,7 @@
   
 <body>
 
-	<div class="main squares">
+	<div id="container" class="main squares">
 		<div>item 1</div>
 		<div>item 2</div>
 		<div>item 3</div>
@@ -22,13 +22,41 @@
 
 	
 	<script type="text/javascript" src='js/jquery-3.4.1.min.js'></script>
-	<script type="text/javascript">
+	<script>
 		const checkbox = $("#menu_checkbox");
 		$(document).on('keydown', function(e) {
 			if (e.keyCode == 27) {
 				checkbox.prop("checked", false);
 			}
 		});
+
+
+		const parent = $('#container');
+		let children = $('#container div');
+
+		function setSizeParent() {
+			parent.css({
+				height: $(window).width() + 'px',
+				width: $(window).height() + 'px'
+			});
+		}
+
+		function setSizeChildren() {
+			$.each(children, function(index, value) {
+				value.css({
+					'color': '#000000',
+					'-webkit-transform': 'rotate(90deg)',
+					'-moz-transform': 'rotate(90deg)',
+					'-ms-transform': 'rotate(90deg)',
+					'-o-transform': 'rotate(90deg)',
+					'transform': 'rotate(90deg)',
+				});
+			});
+		}
+
+		setSizeParent();
+		setSizeChildren();
+		$(window).resize( setSizeParent );
 	</script>
 </body>
 </html>
