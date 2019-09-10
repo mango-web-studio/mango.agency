@@ -1214,6 +1214,8 @@ input {
   background-size: cover;
   background-color: transparent;
   position: fixed;
+  top: 0;
+  left: 0;
   height: 100%;
   width: 100%;
   z-index: -1;
@@ -1562,26 +1564,16 @@ input {
 }
 
 .main {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100vh;
-  height: 100vw;
-  overflow-y: auto;
-  overflow-x: hidden;
-  transform-origin: right top;
-  transform: rotate(-90deg) translateY(-100vh);
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  height: 100vh;
   background-color: #f5f55e;
 }
 
-.main::-webkit-scrollbar {
-  display: none;
-}
-
 .main div {
-  width: 100%;
-  height: 100vh;
-  transform-origin: right top;
+  width: 100vw;
+  flex-shrink: 0;
   font-size: 40px;
   text-align: center;
 }
@@ -1600,4 +1592,415 @@ input {
 
 .main div:last-child {
   background-color: lightblue;
+}
+
+.development_bg {
+  background-image: url("../img/development/development_bg.jpg");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+.menu_checkbox:checked ~ .container .development_list {
+  opacity: 0;
+}
+
+.content_development {
+  position: relative;
+  height: 70%;
+}
+
+.development_list {
+  display: flex;
+  overflow: hidden;
+  height: 100%;
+  transition: opacity 1s;
+}
+
+.development_item {
+  display: flex;
+  width: 100%;
+  flex-shrink: 0;
+  padding: 0 4.6875%;
+}
+
+.development_item:nth-child(2) {
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 4.41% 4.6875%;
+}
+
+.development_item:nth-child(2) .development_item_title {
+  font: 10rem/11rem "Rubik-Bold";
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.development_item:nth-child(2) .development_item_title span {
+  color: #717171;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px #2F2F2F;
+}
+
+.development_item:nth-child(2) .development_price_list {
+  display: flex;
+  justify-content: space-between;
+  width: 107%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ffffff;
+}
+
+.development_item:nth-child(2) .development_price_item {
+  font: 2.5rem/3.3rem "Rubik-Bold";
+  position: relative;
+  width: 23%;
+  padding: 4.03% 2.15%;
+  border: 1px solid #ffffff;
+}
+
+.development_item:nth-child(2) .development_price_item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/development/development_price_rectangle.png");
+}
+
+.development_item:nth-child(2) .development_price_item:first-child::before {
+  top: 15%;
+  left: -8%;
+}
+
+.development_item:nth-child(2) .development_price_item:nth-child(2n)::before {
+  top: -15%;
+  left: 8%;
+}
+
+.development_item:nth-child(2) .development_price_item:nth-child(3)::before {
+  top: 15%;
+  left: 5%;
+}
+
+.development_item:nth-child(2) .development_price_item span {
+  color: #AC54E2;
+}
+
+.development_item:last-child {
+  width: 80%;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 4.41% 4.6875%;
+}
+
+.development_item:last-child .development_item_title {
+  font: 10rem/11rem "Rubik-Bold";
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.development_item:last-child .development_form {
+  width: 80%;
+  align-self: flex-end;
+}
+
+.development_item:last-child .development_form .submit_wrap {
+  display: inline-block;
+  position: relative;
+  margin-top: 10px;
+}
+
+.development_item:last-child .development_form .submit_wrap::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 18%;
+  width: 10%;
+  height: 100%;
+  transform: rotate(-20deg);
+  border: 1px solid #ffffff;
+  transition: 0.5s, transform 0.5s 0.5s;
+}
+
+.development_item:last-child .development_form .submit_wrap:hover::before {
+  width: 100%;
+  left: 0;
+  border-color: #AC54E2;
+  transform: rotate(0deg);
+  transition: 0.5s, width 0.5s 0.5s, left 0.5s 0.5s;
+}
+
+.development_item:last-child .development_form input {
+  font: 1.8rem/4rem "Rubik-Regular";
+  background-color: transparent;
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid #ffffff;
+  width: 30.79%;
+  margin-right: 16.61%;
+  color: #ffffff;
+  resize: none;
+}
+
+.development_item:last-child .development_form input::placeholder {
+  font: 1.8rem/4rem "Rubik-Regular";
+  color: #ffffff;
+}
+
+.development_item:last-child .development_form input[type="submit"] {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  border: 0;
+  padding: 0 5px;
+  color: #AC54E2;
+  cursor: pointer;
+}
+
+.development_item:last-child .development_form input:first-child[type="text"] {
+  margin-bottom: 9.13%;
+}
+
+.development_item:last-child .development_form textarea {
+  font: 1.8rem/4rem "Rubik-Regular";
+  background-color: transparent;
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid #ffffff;
+  width: 30.79%;
+  margin-right: 9.22%;
+  color: #ffffff;
+  overflow: hidden;
+  resize: none;
+  vertical-align: bottom;
+  outline: none;
+}
+
+.development_item:last-child .development_form textarea::placeholder {
+  font: 1.8rem/4rem "Rubik-Regular";
+  color: #ffffff;
+}
+
+.development_item_inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  width: 50%;
+  color: #ffffff;
+  padding: 4.87% 0;
+  z-index: 1;
+}
+
+.development_item_inner:last-child .development_item_inner_img {
+  width: 37%;
+  top: 10%;
+  left: 7%;
+}
+
+.development_item_inner:last-child .development_item_inner_title {
+  position: relative;
+  right: 27%;
+  color: #717171;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px #ffffff;
+}
+
+.development_item_inner:last-child .development_item_inner_title_small span {
+  color: #717171;
+}
+
+.development_item_inner:last-child .development_item_inner_title_small span::before {
+  left: 20%;
+  background-color: #717171;
+}
+
+.development_item_inner:last-child .development_item_inner_description {
+  width: 50%;
+  margin-left: 15%;
+  color: #717171;
+}
+
+.development_item_inner_img {
+  position: absolute;
+  top: 23%;
+  left: 31%;
+  width: 30%;
+  z-index: -1;
+}
+
+.development_item_inner_title {
+  font: 10rem/11rem "Rubik-Bold";
+}
+
+.development_item_inner_title_small {
+  font: 1.8rem/3rem "Rubik-Regular";
+}
+
+.development_item_inner_title_small span {
+  display: block;
+}
+
+.development_item_inner_title_small span:first-child {
+  color: #717171;
+}
+
+.development_item_inner_title_small span:last-child {
+  position: relative;
+}
+
+.development_item_inner_title_small span:last-child::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 15%;
+  width: 30%;
+  height: 1px;
+  background-color: #ffffff;
+}
+
+.development_item_inner_description {
+  font: 1.8rem/3rem "Rubik-Regular";
+  width: 79%;
+  margin: 0 auto;
+  margin-left: 8%;
+}
+
+.mobile_content_development {
+  height: 85%;
+}
+
+.mobile_content_development .development_item:first-child {
+  width: 200%;
+}
+
+@media only screen and (max-width: 1366px) {
+  .development_item_inner_title {
+    font: 7rem/8rem "Rubik-Bold";
+  }
+  .development_item_inner_title_small {
+    font: 1.2rem/2.2rem "Rubik-Regular";
+  }
+  .development_item_inner_description {
+    font: 1.2rem/2.2rem "Rubik-Regular";
+  }
+  .development_item:nth-child(2) .development_item_title {
+    font: 7rem/8rem "Rubik-Bold";
+  }
+  .development_item:nth-child(2) .development_price_item {
+    font: 1.7rem/2.4rem "Rubik-Bold";
+  }
+  .development_item:last-child .development_item_title {
+    font: 7rem/8rem "Rubik-Bold";
+  }
+  .development_item:last-child .development_form input {
+    font: 1.4rem/3rem "Rubik-Regular";
+  }
+  .development_item:last-child .development_form textarea {
+    font: 1.4rem/3rem "Rubik-Regular";
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .development_item_inner_title {
+    font: 5rem/6rem "Rubik-Bold";
+  }
+  .development_item:nth-child(2) .development_item_title {
+    font: 5rem/6rem "Rubik-Bold";
+  }
+  .development_item:nth-child(2) .development_price_item {
+    font: 1.2rem/1.8rem "Rubik-Bold";
+  }
+  .development_item:last-child .development_item_title {
+    font: 5rem/6rem "Rubik-Bold";
+  }
+  .development_item:last-child .development_form input {
+    font: 1.2rem/3rem "Rubik-Regular";
+    margin-right: 10%;
+  }
+  .development_item:last-child .development_form input:first-child[type="text"] {
+    margin-bottom: 7%;
+  }
+  .development_item:last-child .development_form textarea {
+    font: 1.2rem/3rem "Rubik-Regular";
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .development_item_inner_title {
+    font: 4rem/6rem "Rubik-Bold";
+  }
+  .development_item_inner_description {
+    text-align: center;
+  }
+  .development_item:nth-child(2) .development_item_title {
+    font: 4rem/6rem "Rubik-Bold";
+  }
+  .development_item:nth-child(2) .development_price_item {
+    font: 1.2rem/1.8rem "Rubik-Bold";
+  }
+  .development_item:nth-child(2) .development_price_list {
+    flex-direction: column;
+    width: 100%;
+    height: 80%;
+  }
+  .development_item:nth-child(2) .development_price_item {
+    font: 1rem/1.4rem "Rubik-Bold";
+    width: 60%;
+    padding: 2.5% 1.5%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .development_item:last-child .development_item_title {
+    font: 4rem/6rem "Rubik-Bold";
+  }
+  .development_item:last-child .development_form input {
+    font: 1.2rem/3rem "Rubik-Regular";
+    margin-right: 10%;
+  }
+  .development_item:last-child .development_form input:first-child[type="text"] {
+    margin-bottom: 7%;
+  }
+  .development_item:last-child .development_form textarea {
+    font: 1.2rem/3rem "Rubik-Regular";
+  }
+  .development_item:last-child .development_form {
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 40%;
+  }
+  .development_item:last-child .development_form input {
+    width: 40%;
+    margin: 0;
+  }
+  .development_item:last-child .development_form input:first-child[type="text"] {
+    margin: 0;
+  }
+  .development_item:last-child .development_form textarea {
+    width: 40%;
+    margin: 0;
+  }
+  .development_item:last-child .development_form .submit_wrap {
+    display: block;
+    width: 25%;
+    margin: auto;
+  }
+  .development_item:last-child .development_form .submit_wrap::before {
+    left: 33%;
+    width: 5%;
+  }
 }

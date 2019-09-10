@@ -1,24 +1,17 @@
 .main {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100vh;
-    height: 100vw;
-    overflow-y: auto;
-    overflow-x: hidden;
-    transform-origin: right top;
-    transform: rotate(-90deg) translateY(-100vh);
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    height: 100vh;
     background-color: rgb(245, 245, 94);
 
-    &::-webkit-scrollbar {
-        display: none;
-    }
+    // &::-webkit-scrollbar {
+    //     display: none;
+    // }
 
     div {
-        width: 100%;
-        height: 100vh;
-        transform-origin: right top;
-        // transform: rotate(90deg) translateX(100%);
+        width: 100vw;
+        flex-shrink: 0;
         font-size: 40px;
         text-align: center;
 
