@@ -1880,8 +1880,170 @@ input {
   height: 85%;
 }
 
+.mobile_content_development .development_item {
+  padding: 20px 0;
+}
+
+.mobile_content_development .development_item_inner {
+  display: block;
+  padding: 0;
+  right: auto;
+  left: 0;
+}
+
+.mobile_content_development .development_item_inner:first-child {
+  width: 45%;
+  padding-left: 3%;
+}
+
+.mobile_content_development .development_item_inner:last-child {
+  width: 55%;
+}
+
+.mobile_content_development .development_item_inner:last-child .development_item_inner_img {
+  top: auto;
+  left: 35%;
+  bottom: 10%;
+  width: 50%;
+}
+
+.mobile_content_development .development_item_inner:last-child .development_item_inner_title {
+  left: 0;
+}
+
+.mobile_content_development .development_item_inner:last-child .development_item_inner_title_small {
+  margin-left: 8%;
+}
+
+.mobile_content_development .development_item_inner:last-child .development_item_inner_title_small span {
+  color: #ffffff;
+}
+
+.mobile_content_development .development_item_inner:last-child .development_item_inner_title_small span::before {
+  left: 35%;
+  background-color: #ffffff;
+}
+
+.mobile_content_development .development_item_inner:last-child .development_item_inner_description {
+  margin-left: 40%;
+  color: #ffffff;
+}
+
+.mobile_content_development .development_item_inner_img {
+  top: auto;
+  left: 0;
+  bottom: 0;
+  width: 75%;
+}
+
+.mobile_content_development .development_item_inner_title {
+  font: 3.9rem/4rem "Rubik-Bold";
+  margin-bottom: 15%;
+}
+
+.mobile_content_development .development_item_inner_title_small {
+  position: relative;
+  margin: 0 0 10% 10%;
+}
+
+.mobile_content_development .development_item_inner_title_small span:last-child::first-letter {
+  color: #AC54E2;
+}
+
+.mobile_content_development .development_item_inner_title_small span::before {
+  left: 30%;
+  width: 20%;
+}
+
+.mobile_content_development .development_item_inner_description {
+  text-align: left;
+  width: 65%;
+  margin: 0 0 10% 37%;
+}
+
 .mobile_content_development .development_item:first-child {
-  width: 200%;
+  width: 240%;
+  justify-content: space-between;
+}
+
+.mobile_content_development .development_item:nth-child(2) {
+  width: 170%;
+  justify-content: flex-start;
+}
+
+.mobile_content_development .development_item:nth-child(2) .development_item_title {
+  font: 3.9rem/4rem "Rubik-Bold";
+  position: relative;
+  left: 14%;
+  margin-bottom: 50px;
+}
+
+.mobile_content_development .development_item:nth-child(2) .development_price_list {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: space-between;
+  height: 60%;
+}
+
+.mobile_content_development .development_item:nth-child(2) .development_price_item {
+  width: 42.3%;
+  padding: 7.3%;
+}
+
+.mobile_content_development .development_item:last-child {
+  justify-content: flex-start;
+}
+
+.mobile_content_development .development_item:last-child .development_item_title {
+  font: 3.9rem/4rem "Rubik-Bold";
+  margin-bottom: 50px;
+}
+
+.mobile_content_development .development_item:last-child .development_form {
+  padding-left: 15%;
+  height: auto;
+}
+
+.mobile_content_development .development_item:last-child .development_form input {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.mobile_content_development .development_item:last-child .development_form input:first-child[type="text"] {
+  margin-bottom: 20px;
+}
+
+.mobile_content_development .development_item:last-child .development_form input::placeholder {
+  font: 1.2rem/2rem "Rubik-Regular";
+}
+
+.mobile_content_development .development_item:last-child .development_form textarea {
+  width: 100%;
+  border: 1px solid #ffffff;
+  margin-bottom: 20px;
+  height: 75px;
+  padding-left: 5px;
+}
+
+.mobile_content_development .development_item:last-child .development_form textarea::placeholder {
+  font: 1.2rem/2rem "Rubik-Regular";
+}
+
+.mobile_content_development .development_item:last-child .development_form .submit_wrap {
+  margin: 0;
+  width: auto;
+}
+
+.mobile_content_development .development_item:last-child .development_form .submit_wrap::before {
+  left: 0;
+  width: 100%;
+  border-color: #AC54E2;
+  transform: rotate(0);
+}
+
+.mobile_content_development .development_item:last-child .development_form .submit_wrap input {
+  margin: 0;
+  padding: 0 25px;
 }
 
 @media only screen and (max-width: 1366px) {

@@ -316,16 +316,186 @@
 .mobile_content_development {
     height: 85%;
 
-    .development {
+    .development_item {
+        padding: 20px 0;
 
-        &_list {
-
-        }
-
-        &_item {
+        &_inner {
+            display: block;
+            padding: 0;
+            right: auto;
+            left: 0;
 
             &:first-child {
-                width: 200%;
+                width: 45%;
+                padding-left: 3%;
+            }
+
+            &:last-child {
+                width: 55%;
+                
+                .development_item_inner {
+
+                    &_img {
+                        top: auto;
+                        left: 35%;
+                        bottom: 10%;
+                        width: 50%;
+                    }
+
+                    &_title {
+                        left: 0;
+                    }
+
+                    &_title_small {
+                        margin-left: 8%;
+                        
+                        span {
+                            color: $white_1;
+
+                            &::before {
+                                left: 35%;
+                                background-color: $white_1;
+                            }
+                        }
+                    }
+
+                    &_description {
+                        margin-left: 40%;
+                        color: $white_1;
+                    }
+                }
+            }
+
+            &_img {
+                top: auto;
+                left: 0;
+                bottom: 0;
+                width: 75%;
+            }
+            
+            &_title {
+                @include font(39px, 40px, 'Rubik-Bold');
+
+                margin-bottom: 15%;
+
+                &_small {
+                    position: relative;
+                    margin: 0 0 10% 10%;
+
+                    span {
+
+                        &:last-child::first-letter {
+                            color: $purple_1;
+                        }
+
+                        &::before {
+                            left: 30%;
+                            width: 20%;
+                        }
+                    }
+                }
+            }
+
+            &_description {
+                text-align: left;
+                width: 65%;
+                margin: 0 0 10% 37%;
+            }
+        }
+        
+        &:first-child {
+            width: 240%;
+            justify-content: space-between;
+        }
+
+        &:nth-child(2) {
+            width: 170%;
+            justify-content: flex-start;
+
+            .development_item {
+
+                &_title {
+                    @include font(39px, 40px, 'Rubik-Bold');
+
+                    position: relative;
+                    left: 14%;
+                    margin-bottom: 50px;
+                }
+            }
+
+            .development_price {
+
+                &_list {
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    align-content: space-between;
+                    height: 60%;
+                }
+
+                &_item {
+                    width: 42.3%;
+                    padding: 7.3%;
+                }
+            }
+        }
+
+        &:last-child {
+            justify-content: flex-start;
+
+            .development_item {
+
+                &_title {
+                    @include font(39px, 40px, 'Rubik-Bold');
+
+                    margin-bottom: 50px;
+                }
+            }
+
+            .development_form {
+                padding-left: 15%;
+                height: auto;
+
+                input {
+                    width: 100%;
+                    margin-bottom: 20px;
+                    
+                    &:first-child[type="text"] {
+                        margin-bottom: 20px;
+                    }
+
+                    &::placeholder {
+                        @include font(12px, 20px, 'Rubik-Regular');
+                    }
+                }
+                
+                textarea {
+                    width: 100%;
+                    border: 1px solid $white_1;
+                    margin-bottom: 20px;
+                    height: 75px;
+                    padding-left: 5px;
+
+                    &::placeholder {
+                        @include font(12px, 20px, 'Rubik-Regular');
+                    }
+                }
+
+                .submit_wrap {
+                    margin: 0;
+                    width: auto;
+
+                    &::before {
+                        left: 0;
+                        width: 100%;
+                        border-color: $purple_1;
+                        transform: rotate(0);
+                    }
+                    
+                    input {
+                        margin: 0;
+                        padding: 0 25px;
+                    }
+                }
             }
         }
     }
