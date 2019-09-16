@@ -1,6 +1,13 @@
 $(function() {
-    $(".horizontal_scroll").mousewheel(function(event, delta) {
-        this.scrollLeft -= (delta * 100);
+
+    let scroll = null;
+
+    $('.horizontal_scroll').mousewheel(function(event, delta) {
         event.preventDefault();
+
+        if(Math.abs(delta) >= 50) delta /= 50;
+
+        this.scrollLeft -= (delta * 50);
     });
+
 });

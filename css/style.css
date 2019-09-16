@@ -805,6 +805,16 @@ input {
   transition: 1s;
 }
 
+.mobile::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: 1s;
+}
+
 .mobile_header {
   position: relative;
   display: flex;
@@ -1022,8 +1032,11 @@ input {
     filter: brightness(1.5);
     opacity: 1;
   }
-  #menu_checkbox:checked ~ .mobile {
+  #menu_checkbox:checked ~ .mobile::before {
     background-color: rgba(0, 0, 0, 0.55);
+  }
+  #menu_checkbox:checked ~ .mobile .mobile_content_portfolio {
+    z-index: -1;
   }
   #menu_checkbox:checked ~ .mobile .mobile_menu_label {
     opacity: 0;
@@ -1037,9 +1050,6 @@ input {
   }
   #menu_checkbox:checked ~ .mobile .mobile_footer_portfolio {
     opacity: 0;
-  }
-  #menu_checkbox:checked ~ .mobile .mobile_menu {
-    opacity: 1;
   }
   #menu_checkbox:checked ~ .mobile .mobile_title {
     position: relative;
@@ -1612,16 +1622,26 @@ input {
   opacity: 0;
 }
 
+#menu_checkbox:checked ~ .mobile .mobile_content_development {
+  opacity: 0;
+}
+
 .content_development {
   position: relative;
   height: 70%;
+  overflow: hidden;
 }
 
 .development_list {
   display: flex;
-  overflow: hidden;
-  height: 100%;
+  height: calc(100% + 18px);
+  overflow-x: scroll;
+  padding-bottom: 18px;
   transition: opacity 1s;
+}
+
+.development_list::-webkit-scrollbar {
+  display: none;
 }
 
 .development_item {
@@ -1675,6 +1695,7 @@ input {
   width: 100%;
   height: 100%;
   background-image: url("../img/development/development_price_rectangle.png");
+  z-index: -1;
 }
 
 .development_item:nth-child(2) .development_price_item:first-child::before {
@@ -1710,7 +1731,7 @@ input {
 }
 
 .development_item:last-child .development_form {
-  width: 80%;
+  width: 85%;
   align-self: flex-end;
 }
 
@@ -1718,18 +1739,19 @@ input {
   display: inline-block;
   position: relative;
   margin-top: 10px;
+  padding: 0 10px;
 }
 
 .development_item:last-child .development_form .submit_wrap::before {
   content: '';
   position: absolute;
   top: 0;
-  left: 18%;
-  width: 10%;
+  left: 4.5ch;
+  width: 8%;
   height: 100%;
   transform: rotate(-20deg);
   border: 1px solid #ffffff;
-  transition: 0.5s, transform 0.5s 0.5s;
+  transition: 0.2s, transform 0.2s 0.2s;
 }
 
 .development_item:last-child .development_form .submit_wrap:hover::before {
@@ -1737,7 +1759,7 @@ input {
   left: 0;
   border-color: #AC54E2;
   transform: rotate(0deg);
-  transition: 0.5s, width 0.5s 0.5s, left 0.5s 0.5s;
+  transition: 0.2s, width 0.2s 0.2s, left 0.2s 0.2s;
 }
 
 .development_item:last-child .development_form input {
@@ -1816,19 +1838,13 @@ input {
   -webkit-text-stroke: 1px #ffffff;
 }
 
-.development_item_inner:last-child .development_item_inner_title_small span {
-  color: #717171;
-}
-
-.development_item_inner:last-child .development_item_inner_title_small span::before {
-  left: 20%;
-  background-color: #717171;
-}
-
 .development_item_inner:last-child .development_item_inner_description {
-  width: 50%;
+  width: 55%;
   margin-left: 15%;
-  color: #717171;
+}
+
+.development_item_inner:last-child .development_item_inner_title_small span:last-child::before {
+  left: 15ch;
 }
 
 .development_item_inner_img {
@@ -1863,7 +1879,7 @@ input {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 15%;
+  left: 10ch;
   width: 30%;
   height: 1px;
   background-color: #ffffff;
@@ -1878,6 +1894,7 @@ input {
 
 .mobile_content_development {
   height: 85%;
+  transition: 1s;
 }
 
 .mobile_content_development .development_item {
@@ -2046,6 +2063,18 @@ input {
   padding: 0 25px;
 }
 
+@media only screen and (max-width: 1440px) {
+  .development_item_inner_title {
+    font: 9rem/10rem "Rubik-Bold";
+  }
+  .development_item:nth-child(2) .development_item_title {
+    font: 9rem/10rem "Rubik-Bold";
+  }
+  .development_item:last-child .development_item_title {
+    font: 9rem/10rem "Rubik-Bold";
+  }
+}
+
 @media only screen and (max-width: 1366px) {
   .development_item_inner_title {
     font: 7rem/8rem "Rubik-Bold";
@@ -2067,9 +2096,11 @@ input {
   }
   .development_item:last-child .development_form input {
     font: 1.4rem/3rem "Rubik-Regular";
+    margin-right: 15%;
   }
   .development_item:last-child .development_form textarea {
     font: 1.4rem/3rem "Rubik-Regular";
+    margin-right: 8%;
   }
 }
 
