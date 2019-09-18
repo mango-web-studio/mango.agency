@@ -88,8 +88,8 @@
                 "width": global_settings.width
             });
 
-            // Number of intervals, 10ms interval
-            var num_of_steps = time / 10;
+            // Number of intervals, 3ms interval
+            var num_of_steps = time / 3;
             // Amount of change each step
             var percent_change = (value - global_settings.percent) / num_of_steps;
 

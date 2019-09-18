@@ -2004,7 +2004,7 @@ input {
 
 .mobile_content_development .development_item:nth-child(2) .development_price_item {
   width: 42.3%;
-  padding: 7.3%;
+  padding: 5.5%;
 }
 
 .mobile_content_development .development_item:last-child {
@@ -2070,8 +2070,19 @@ input {
   .development_item:nth-child(2) .development_item_title {
     font: 9rem/10rem "Rubik-Bold";
   }
+  .development_item:nth-child(2) .development_price_item {
+    font: 1.8rem/2.8rem "Rubik-Bold";
+  }
   .development_item:last-child .development_item_title {
     font: 9rem/10rem "Rubik-Bold";
+  }
+  .development_item:last-child .development_form input {
+    font: 1.4rem/3rem "Rubik-Regular";
+    margin-right: 13%;
+  }
+  .development_item:last-child .development_form textarea {
+    font: 1.4rem/3rem "Rubik-Regular";
+    margin-right: 8%;
   }
 }
 
@@ -2141,6 +2152,7 @@ input {
   }
   .development_item:nth-child(2) .development_price_item {
     font: 1.2rem/1.8rem "Rubik-Bold";
+    padding: 5.5%;
   }
   .development_item:nth-child(2) .development_price_list {
     flex-direction: column;
@@ -2148,7 +2160,7 @@ input {
     height: 80%;
   }
   .development_item:nth-child(2) .development_price_item {
-    font: 1rem/1.4rem "Rubik-Bold";
+    font: 1.2rem/1.6rem "Rubik-Bold";
     width: 60%;
     padding: 2.5% 1.5%;
     margin: 0 auto;
@@ -2193,6 +2205,593 @@ input {
     margin: auto;
   }
   .development_item:last-child .development_form .submit_wrap::before {
+    left: 33%;
+    width: 5%;
+  }
+}
+
+.development_bg {
+  background-image: url("../img/development/development_bg.jpg");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+.menu_checkbox:checked ~ .container .marketing_list {
+  opacity: 0;
+}
+
+#menu_checkbox:checked ~ .mobile .mobile_content_marketing {
+  opacity: 0;
+}
+
+.content_marketing {
+  position: relative;
+  height: 70%;
+  overflow: hidden;
+}
+
+.marketing_list {
+  display: flex;
+  height: calc(100% + 18px);
+  overflow-x: scroll;
+  padding-bottom: 18px;
+  transition: opacity 1s;
+}
+
+.marketing_list::-webkit-scrollbar {
+  display: none;
+}
+
+.marketing_item {
+  display: flex;
+  width: 100%;
+  flex-shrink: 0;
+  padding: 0 4.6875%;
+}
+
+.marketing_item:nth-child(2) {
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 4.41% 4.6875%;
+}
+
+.marketing_item:nth-child(2) .marketing_item_title {
+  font: 10rem/11rem "Rubik-Bold";
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.marketing_item:nth-child(2) .marketing_item_title span {
+  color: #717171;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px #2F2F2F;
+}
+
+.marketing_item:nth-child(2) .marketing_price_list {
+  display: flex;
+  justify-content: space-between;
+  width: 107%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ffffff;
+}
+
+.marketing_item:nth-child(2) .marketing_price_item {
+  font: 2.5rem/3.3rem "Rubik-Bold";
+  position: relative;
+  width: 23%;
+  padding: 4.03% 2.15%;
+  border: 1px solid #ffffff;
+}
+
+.marketing_item:nth-child(2) .marketing_price_item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/development/development_price_rectangle.png");
+  z-index: -1;
+}
+
+.marketing_item:nth-child(2) .marketing_price_item:first-child::before {
+  top: 15%;
+  left: -8%;
+}
+
+.marketing_item:nth-child(2) .marketing_price_item:nth-child(2n)::before {
+  top: -15%;
+  left: 8%;
+}
+
+.marketing_item:nth-child(2) .marketing_price_item:nth-child(3)::before {
+  top: 15%;
+  left: 5%;
+}
+
+.marketing_item:nth-child(2) .marketing_price_item span {
+  color: #AC54E2;
+}
+
+.marketing_item:last-child {
+  width: 80%;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 4.41% 4.6875%;
+}
+
+.marketing_item:last-child .marketing_item_title {
+  font: 10rem/11rem "Rubik-Bold";
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.marketing_item:last-child .marketing_form {
+  width: 85%;
+  align-self: flex-end;
+}
+
+.marketing_item:last-child .marketing_form .submit_wrap {
+  display: inline-block;
+  position: relative;
+  margin-top: 10px;
+  padding: 0 10px;
+}
+
+.marketing_item:last-child .marketing_form .submit_wrap::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 4.5ch;
+  width: 8%;
+  height: 100%;
+  transform: rotate(-20deg);
+  border: 1px solid #ffffff;
+  transition: 0.2s, transform 0.2s 0.2s;
+}
+
+.marketing_item:last-child .marketing_form .submit_wrap:hover::before {
+  width: 100%;
+  left: 0;
+  border-color: #AC54E2;
+  transform: rotate(0deg);
+  transition: 0.2s, width 0.2s 0.2s, left 0.2s 0.2s;
+}
+
+.marketing_item:last-child .marketing_form input {
+  font: 1.8rem/4rem "Rubik-Regular";
+  background-color: transparent;
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid #ffffff;
+  width: 30.79%;
+  margin-right: 16.61%;
+  color: #ffffff;
+  resize: none;
+}
+
+.marketing_item:last-child .marketing_form input::placeholder {
+  font: 1.8rem/4rem "Rubik-Regular";
+  color: #ffffff;
+}
+
+.marketing_item:last-child .marketing_form input[type="submit"] {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  border: 0;
+  padding: 0 5px;
+  color: #AC54E2;
+  cursor: pointer;
+}
+
+.marketing_item:last-child .marketing_form input:first-child[type="text"] {
+  margin-bottom: 9.13%;
+}
+
+.marketing_item:last-child .marketing_form textarea {
+  font: 1.8rem/4rem "Rubik-Regular";
+  background-color: transparent;
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid #ffffff;
+  width: 30.79%;
+  margin-right: 9.22%;
+  color: #ffffff;
+  overflow: hidden;
+  resize: none;
+  vertical-align: bottom;
+  outline: none;
+}
+
+.marketing_item:last-child .marketing_form textarea::placeholder {
+  font: 1.8rem/4rem "Rubik-Regular";
+  color: #ffffff;
+}
+
+.marketing_item_inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+  color: #ffffff;
+  padding: 4.87% 0;
+  z-index: 1;
+}
+
+.marketing_item_inner_img {
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  width: 25%;
+  z-index: -1;
+}
+
+.marketing_item_inner_title {
+  font: 10rem/11rem "Rubik-Bold";
+  color: #ffffff;
+}
+
+.marketing_item_inner_title span {
+  display: block;
+  margin-left: 15%;
+  color: #ffffff;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px #ffffff;
+}
+
+.marketing_item_inner_title_small {
+  font: 1.8rem/3rem "Rubik-Regular";
+}
+
+.marketing_item_inner_title_small span {
+  display: block;
+}
+
+.marketing_item_inner_title_small span:first-child {
+  color: #717171;
+}
+
+.marketing_item_inner_title_small span:last-child {
+  position: relative;
+}
+
+.marketing_item_inner_title_small span:last-child::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 13ch;
+  width: 14.95%;
+  height: 1px;
+  background-color: #ffffff;
+}
+
+.marketing_item_inner_description {
+  font: 1.8rem/3rem "Rubik-Regular";
+  width: 57%;
+  margin: 0 auto;
+  margin-left: 8%;
+}
+
+.mobile_content_marketing {
+  height: 85%;
+  transition: 1s;
+}
+
+.mobile_content_marketing .marketing_item {
+  padding: 20px 0;
+}
+
+.mobile_content_marketing .marketing_item_inner {
+  display: block;
+  padding: 0;
+  right: auto;
+  left: 0;
+}
+
+.mobile_content_marketing .marketing_item_inner:first-child {
+  width: 45%;
+  padding-left: 3%;
+}
+
+.mobile_content_marketing .marketing_item_inner:last-child {
+  width: 55%;
+}
+
+.mobile_content_marketing .marketing_item_inner:last-child .marketing_item_inner_img {
+  top: auto;
+  left: 35%;
+  bottom: 10%;
+  width: 50%;
+}
+
+.mobile_content_marketing .marketing_item_inner:last-child .marketing_item_inner_title {
+  left: 0;
+}
+
+.mobile_content_marketing .marketing_item_inner:last-child .marketing_item_inner_title_small {
+  margin-left: 8%;
+}
+
+.mobile_content_marketing .marketing_item_inner:last-child .marketing_item_inner_title_small span {
+  color: #ffffff;
+}
+
+.mobile_content_marketing .marketing_item_inner:last-child .marketing_item_inner_title_small span::before {
+  left: 35%;
+  background-color: #ffffff;
+}
+
+.mobile_content_marketing .marketing_item_inner:last-child .marketing_item_inner_description {
+  margin-left: 40%;
+  color: #ffffff;
+}
+
+.mobile_content_marketing .marketing_item_inner_img {
+  top: auto;
+  left: 0;
+  bottom: 0;
+  width: 75%;
+}
+
+.mobile_content_marketing .marketing_item_inner_title {
+  font: 3.9rem/4rem "Rubik-Bold";
+  margin-bottom: 15%;
+}
+
+.mobile_content_marketing .marketing_item_inner_title_small {
+  position: relative;
+  margin: 0 0 10% 10%;
+}
+
+.mobile_content_marketing .marketing_item_inner_title_small span:last-child::first-letter {
+  color: #AC54E2;
+}
+
+.mobile_content_marketing .marketing_item_inner_title_small span::before {
+  left: 30%;
+  width: 20%;
+}
+
+.mobile_content_marketing .marketing_item_inner_description {
+  text-align: left;
+  width: 65%;
+  margin: 0 0 10% 37%;
+}
+
+.mobile_content_marketing .marketing_item:first-child {
+  width: 240%;
+  justify-content: space-between;
+}
+
+.mobile_content_marketing .marketing_item:nth-child(2) {
+  width: 170%;
+  justify-content: flex-start;
+}
+
+.mobile_content_marketing .marketing_item:nth-child(2) .marketing_item_title {
+  font: 3.9rem/4rem "Rubik-Bold";
+  position: relative;
+  left: 14%;
+  margin-bottom: 50px;
+}
+
+.mobile_content_marketing .marketing_item:nth-child(2) .marketing_price_list {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: space-between;
+  height: 60%;
+}
+
+.mobile_content_marketing .marketing_item:nth-child(2) .marketing_price_item {
+  width: 42.3%;
+  padding: 5.5%;
+}
+
+.mobile_content_marketing .marketing_item:last-child {
+  justify-content: flex-start;
+}
+
+.mobile_content_marketing .marketing_item:last-child .marketing_item_title {
+  font: 3.9rem/4rem "Rubik-Bold";
+  margin-bottom: 50px;
+}
+
+.mobile_content_marketing .marketing_item:last-child .marketing_form {
+  padding-left: 15%;
+  height: auto;
+}
+
+.mobile_content_marketing .marketing_item:last-child .marketing_form input {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.mobile_content_marketing .marketing_item:last-child .marketing_form input:first-child[type="text"] {
+  margin-bottom: 20px;
+}
+
+.mobile_content_marketing .marketing_item:last-child .marketing_form input::placeholder {
+  font: 1.2rem/2rem "Rubik-Regular";
+}
+
+.mobile_content_marketing .marketing_item:last-child .marketing_form textarea {
+  width: 100%;
+  border: 1px solid #ffffff;
+  margin-bottom: 20px;
+  height: 75px;
+  padding-left: 5px;
+}
+
+.mobile_content_marketing .marketing_item:last-child .marketing_form textarea::placeholder {
+  font: 1.2rem/2rem "Rubik-Regular";
+}
+
+.mobile_content_marketing .marketing_item:last-child .marketing_form .submit_wrap {
+  margin: 0;
+  width: auto;
+}
+
+.mobile_content_marketing .marketing_item:last-child .marketing_form .submit_wrap::before {
+  left: 0;
+  width: 100%;
+  border-color: #AC54E2;
+  transform: rotate(0);
+}
+
+.mobile_content_marketing .marketing_item:last-child .marketing_form .submit_wrap input {
+  margin: 0;
+  padding: 0 25px;
+}
+
+@media only screen and (max-width: 1440px) {
+  .marketing_item_inner_title {
+    font: 9rem/10rem "Rubik-Bold";
+  }
+  .marketing_item:nth-child(2) .marketing_item_title {
+    font: 9rem/10rem "Rubik-Bold";
+  }
+  .marketing_item:nth-child(2) .marketing_price_item {
+    font: 1.8rem/2.8rem "Rubik-Bold";
+  }
+  .marketing_item:last-child .marketing_item_title {
+    font: 9rem/10rem "Rubik-Bold";
+  }
+  .marketing_item:last-child .marketing_form input {
+    margin-right: 7%;
+  }
+}
+
+@media only screen and (max-width: 1366px) {
+  .marketing_item_inner_title {
+    font: 7rem/8rem "Rubik-Bold";
+  }
+  .marketing_item_inner_title_small {
+    font: 1.2rem/2.2rem "Rubik-Regular";
+  }
+  .marketing_item_inner_description {
+    font: 1.2rem/2.2rem "Rubik-Regular";
+  }
+  .marketing_item:nth-child(2) .marketing_item_title {
+    font: 7rem/8rem "Rubik-Bold";
+  }
+  .marketing_item:nth-child(2) .marketing_price_item {
+    font: 1.7rem/2.4rem "Rubik-Bold";
+  }
+  .marketing_item:last-child .marketing_item_title {
+    font: 7rem/8rem "Rubik-Bold";
+  }
+  .marketing_item:last-child .marketing_form input {
+    font: 1.4rem/3rem "Rubik-Regular";
+    margin-right: 15%;
+  }
+  .marketing_item:last-child .marketing_form textarea {
+    font: 1.4rem/3rem "Rubik-Regular";
+    margin-right: 8%;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .marketing_item_inner_title {
+    font: 5rem/6rem "Rubik-Bold";
+  }
+  .marketing_item:nth-child(2) .marketing_item_title {
+    font: 5rem/6rem "Rubik-Bold";
+  }
+  .marketing_item:nth-child(2) .marketing_price_item {
+    font: 1.2rem/1.8rem "Rubik-Bold";
+  }
+  .marketing_item:last-child .marketing_item_title {
+    font: 5rem/6rem "Rubik-Bold";
+  }
+  .marketing_item:last-child .marketing_form input {
+    font: 1.2rem/3rem "Rubik-Regular";
+    margin-right: 10%;
+  }
+  .marketing_item:last-child .marketing_form input:first-child[type="text"] {
+    margin-bottom: 7%;
+  }
+  .marketing_item:last-child .marketing_form textarea {
+    font: 1.2rem/3rem "Rubik-Regular";
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .marketing_item_inner_title {
+    font: 4rem/6rem "Rubik-Bold";
+  }
+  .marketing_item_inner_description {
+    text-align: center;
+  }
+  .marketing_item:nth-child(2) .marketing_item_title {
+    font: 4rem/6rem "Rubik-Bold";
+  }
+  .marketing_item:nth-child(2) .marketing_price_item {
+    font: 1.2rem/1.8rem "Rubik-Bold";
+    padding: 5.5%;
+  }
+  .marketing_item:nth-child(2) .marketing_price_list {
+    flex-direction: column;
+    width: 100%;
+    height: 80%;
+  }
+  .marketing_item:nth-child(2) .marketing_price_item {
+    font: 1rem/1.4rem "Rubik-Bold";
+    width: 60%;
+    padding: 2.5% 1.5%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .marketing_item:last-child .marketing_item_title {
+    font: 4rem/6rem "Rubik-Bold";
+  }
+  .marketing_item:last-child .marketing_form input {
+    font: 1.2rem/3rem "Rubik-Regular";
+    margin-right: 10%;
+  }
+  .marketing_item:last-child .marketing_form input:first-child[type="text"] {
+    margin-bottom: 7%;
+  }
+  .marketing_item:last-child .marketing_form textarea {
+    font: 1.2rem/3rem "Rubik-Regular";
+  }
+  .marketing_item:last-child .marketing_form {
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 40%;
+  }
+  .marketing_item:last-child .marketing_form input {
+    width: 40%;
+    margin: 0;
+  }
+  .marketing_item:last-child .marketing_form input:first-child[type="text"] {
+    margin: 0;
+  }
+  .marketing_item:last-child .marketing_form textarea {
+    width: 40%;
+    margin: 0;
+  }
+  .marketing_item:last-child .marketing_form .submit_wrap {
+    display: block;
+    width: 25%;
+    margin: auto;
+  }
+  .marketing_item:last-child .marketing_form .submit_wrap::before {
     left: 33%;
     width: 5%;
   }

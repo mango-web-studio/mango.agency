@@ -11,28 +11,28 @@
 
 .menu_checkbox:checked ~ .container {
 
-    .development_list {
+    .marketing_list {
         opacity: 0;
     }
 }
 
 #menu_checkbox:checked ~ .mobile {
         
-    .mobile_content_development {
+    .mobile_content_marketing {
         opacity: 0;
     }
 }
 
 .content {
 
-    &_development {
+    &_marketing {
         position: relative;
         height: 70%;
         overflow: hidden;
     }
 }
 
-.development {
+.marketing {
 
     &_list {
         display: flex;
@@ -57,7 +57,7 @@
             justify-content: space-between;
             padding: 4.41% 4.6875%;
 
-            .development {
+            .marketing {
 
                 &_item {
 
@@ -135,7 +135,7 @@
             justify-content: space-between;
             padding: 4.41% 4.6875%;
 
-            .development {
+            .marketing {
 
                 &_item {
 
@@ -241,50 +241,60 @@
             flex-direction: column;
             justify-content: space-between;
             position: relative;
-            width: 50%;
+            width: 100%;
             color: $white_1;
             padding: 4.87% 0;
             z-index: 1;
 
-            &:last-child {
+            // &:last-child {
 
-                .development_item_inner {
+            //     .marketing_item_inner {
 
-                    &_img {
-                        width: 37%;
-                        top: 10%;
-                        left: 7%;
-                    }
+            //         &_img {
+            //             width: 37%;
+            //             top: 10%;
+            //             left: 7%;
+            //         }
     
-                    &_title {
-                        position: relative;
-                        right: 27%;
-                        color: $gray_1;
-                        -webkit-text-fill-color: transparent;
-                        -webkit-text-stroke: 1px $white_1;
-                    }
+            //         &_title {
+            //             position: relative;
+            //             right: 27%;
+            //             color: $gray_1;
+            //             -webkit-text-fill-color: transparent;
+            //             -webkit-text-stroke: 1px $white_1;
+            //         }
     
-                    &_description {
-                        width: 55%;
-                        margin-left: 15%;
-                    }
+            //         &_description {
+            //             width: 55%;
+            //             margin-left: 15%;
+            //         }
 
-                    &_title_small span:last-child::before {
-                        left: 15ch;
-                    }
-                }
-            }
+            //         &_title_small span:last-child::before {
+            //             left: 15ch;
+            //         }
+            //     }
+            // }
 
             &_img {
                 position: absolute;
-                top: 23%;
-                left: 31%;
-                width: 30%;
+                top: 50%;
+                left: 15%;
+                width: 25%;
                 z-index: -1;
             }
 
             &_title {
                 @include font(100px, 110px, 'Rubik-Bold');
+
+                color: $white_1;
+
+                span {
+                    display: block;
+                    margin-left: 15%;
+                    color: $white_1;
+                    -webkit-text-fill-color: transparent;
+                    -webkit-text-stroke: 1px $white_1;
+                }
             }
 
             &_title_small {
@@ -304,8 +314,8 @@
                             content: '';
                             position: absolute;
                             bottom: 0;
-                            left: 10ch;
-                            width: 30%;
+                            left: 13ch;
+                            width: 14.95%;
                             height: 1px;
                             background-color: $white_1;
                         }
@@ -316,7 +326,7 @@
             &_description {
                 @include font(18px, 30px, 'Rubik-Regular');
 
-                width: 79%;
+                width: 57%;
                 margin: 0 auto;
                 margin-left: 8%;
             }
@@ -325,11 +335,11 @@
 
 }
 
-.mobile_content_development {
+.mobile_content_marketing {
     height: 85%;
     transition: 1s;
 
-    .development_item {
+    .marketing_item {
         padding: 20px 0;
 
         &_inner {
@@ -346,7 +356,7 @@
             &:last-child {
                 width: 55%;
                 
-                .development_item_inner {
+                .marketing_item_inner {
 
                     &_img {
                         top: auto;
@@ -425,7 +435,7 @@
             width: 170%;
             justify-content: flex-start;
 
-            .development_item {
+            .marketing_item {
 
                 &_title {
                     @include font(39px, 40px, 'Rubik-Bold');
@@ -436,7 +446,7 @@
                 }
             }
 
-            .development_price {
+            .marketing_price {
 
                 &_list {
                     flex-direction: row;
@@ -455,7 +465,7 @@
         &:last-child {
             justify-content: flex-start;
 
-            .development_item {
+            .marketing_item {
 
                 &_title {
                     @include font(39px, 40px, 'Rubik-Bold');
@@ -464,7 +474,7 @@
                 }
             }
 
-            .development_form {
+            .marketing_form {
                 padding-left: 15%;
                 height: auto;
 
@@ -518,42 +528,31 @@
 // screen width <=1440px
 @media only screen and (max-width: 1440px) {
 
-    .development_item_inner_title {
+    .marketing_item_inner_title {
         @include font(90px, 100px, 'Rubik-Bold');
     }
 
-    .development_item {
+    .marketing_item {
 
         &:nth-child(2) {
     
-            .development_item_title {
+            .marketing_item_title {
                 @include font(90px, 100px, 'Rubik-Bold');
             }
-            
-            .development_price_item {
+    
+            .marketing_price_item {
                 @include font(18px, 28px, 'Rubik-Bold');
             }
         }
 
         &:last-child {
-    
-            .development_item_title {
+
+            .marketing_item_title {
                 @include font(90px, 100px, 'Rubik-Bold');
             }
-
-            .development_form {
-
-                input {
-                    @include font(14px, 30px, 'Rubik-Regular');
-            
-                    margin-right: 13%;
-                }
-
-                textarea {
-                    @include font(14px, 30px, 'Rubik-Regular');
-            
-                    margin-right: 8%;
-                }
+    
+            .marketing_form input {
+                margin-right: 7%;
             }
         }
     }
@@ -562,38 +561,38 @@
 // screen width <=1366px
 @media only screen and (max-width: 1366px) {
  
-    .development_item_inner_title {
+    .marketing_item_inner_title {
         @include font(70px, 80px, 'Rubik-Bold');
     }
 
-    .development_item_inner_title_small {
+    .marketing_item_inner_title_small {
         @include font(12px, 22px, 'Rubik-Regular');
     }
 
-    .development_item_inner_description {
+    .marketing_item_inner_description {
         @include font(12px, 22px, 'Rubik-Regular');
     }
 
-    .development_item {
+    .marketing_item {
 
         &:nth-child(2) {
     
-            .development_item_title {
+            .marketing_item_title {
                 @include font(70px, 80px, 'Rubik-Bold');
             }
 
-            .development_price_item {
+            .marketing_price_item {
                 @include font(17px, 24px, 'Rubik-Bold');
             }
         }
 
         &:last-child {
 
-            .development_item_title {
+            .marketing_item_title {
                 @include font(70px, 80px, 'Rubik-Bold');
             }
 
-            .development_form {
+            .marketing_form {
 
                 input {
                     @include font(14px, 30px, 'Rubik-Regular');
@@ -614,30 +613,30 @@
 // screen width <=1024px
 @media only screen and (max-width: 1024px) {
  
-    .development_item_inner_title {
+    .marketing_item_inner_title {
         @include font(50px, 60px, 'Rubik-Bold');
     }
 
-    .development_item {
+    .marketing_item {
 
         &:nth-child(2) {
     
-            .development_item_title {
+            .marketing_item_title {
                 @include font(50px, 60px, 'Rubik-Bold');
             }
             
-            .development_price_item {
+            .marketing_price_item {
                 @include font(12px, 18px, 'Rubik-Bold');
             }
         }
 
         &:last-child {
 
-            .development_item_title {
+            .marketing_item_title {
                 @include font(50px, 60px, 'Rubik-Bold');
             }
 
-            .development_form input {
+            .marketing_form input {
                 @include font(12px, 30px, 'Rubik-Regular');
 
                 margin-right: 10%;
@@ -647,7 +646,7 @@
                 }
             }
 
-            .development_form textarea {
+            .marketing_form textarea {
                 @include font(12px, 30px, 'Rubik-Regular');
             }
         }
@@ -656,37 +655,37 @@
 
 // screen width <=768px
 @media only screen and (max-width: 768px) {
-
-    .development_item_inner_title {
+ 
+    .marketing_item_inner_title {
         @include font(40px, 60px, 'Rubik-Bold');
     }
 
-    .development_item_inner_description {
+    .marketing_item_inner_description {
         text-align: center;
     }
 
-    .development_item {
+    .marketing_item {
 
         &:nth-child(2) {
 
-            .development_item_title {
+            .marketing_item_title {
                 @include font(40px, 60px, 'Rubik-Bold');
             }
 
-            .development_price_item {
+            .marketing_price_item {
                 @include font(12px, 18px, 'Rubik-Bold');
 
                 padding: 5.5%;
             }
 
-            .development_price_list {
+            .marketing_price_list {
                 flex-direction: column;
                 width: 100%;
                 height: 80%;
             }
 
-            .development_price_item {
-                @include font(12px, 16px, 'Rubik-Bold');
+            .marketing_price_item {
+                @include font(10px, 14px, 'Rubik-Bold');
 
                 width: 60%;
                 padding: 2.5% 1.5%;
@@ -697,11 +696,11 @@
 
         &:last-child {
             
-            .development_item_title {
+            .marketing_item_title {
                 @include font(40px, 60px, 'Rubik-Bold');
             }
     
-            .development_form input {
+            .marketing_form input {
                 @include font(12px, 30px, 'Rubik-Regular');
     
                 margin-right: 10%;
@@ -711,11 +710,11 @@
                 }
             }
     
-            .development_form textarea {
+            .marketing_form textarea {
                 @include font(12px, 30px, 'Rubik-Regular');
             }
     
-            .development_form {
+            .marketing_form {
                 display: flex;
                 justify-content: space-between;
                 align-content: space-between;

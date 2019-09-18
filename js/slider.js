@@ -21,14 +21,14 @@ $(document).ready(function(){
     // To smooth the scroll of the slider
     const slider = $(".content_portfolio_slider");
     let scrollCount = null;
-    let scroll= null;
+    let scroll = null;
     slider.on('wheel', (function(e) {
         e.preventDefault();
 
         clearTimeout(scroll);
-        scroll = setTimeout(function(){scrollCount=0;}, 30);
+        scroll = setTimeout(function(){ scrollCount = 0; }, 30);
         if(scrollCount) return 0;
-        scrollCount=1;
+        scrollCount = 1;
 
         if (e.originalEvent.deltaY > 0) {
             $(this).slick('slickNext');
