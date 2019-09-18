@@ -1,13 +1,16 @@
 $(function() {
 
-    let scroll = null;
-
-    $('.horizontal_scroll').mousewheel(function(event, delta) {
+    $('.horizontal_scroll').mousewheel(function(event, delta, deltaX, deltaY) {
         event.preventDefault();
 
-        if(Math.abs(delta) >= 50) delta /= 50;
+        if ( navigator.platform.toUpperCase().indexOf('MAC') >= 0 ) {
+            if(Math.abs(deltaY) >= 500) deltaY /= 500;
+            this.scrollLeft -= deltaY;
+        } else {
+            if(Math.abs(deltaY) >= 50) deltaY /= 50;
+            this.scrollLeft -= (deltaY * 50);
+        }
 
-        this.scrollLeft -= (delta * 50);
     });
 
 });

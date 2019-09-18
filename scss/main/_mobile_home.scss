@@ -9,6 +9,16 @@
     overflow: hidden;
     transition: 1s;
 
+    &::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: 1s;
+    }
+
     &_header {
         position: relative;
         display: flex;
@@ -251,46 +261,46 @@
         opacity: 1;
     }
     
-    #menu_checkbox:checked {
-        
-        ~ .mobile {
+    #menu_checkbox:checked ~ .mobile {
+
+        &::before {
             background-color: $black_3;
+        }
 
-            .mobile_menu_label {
+        .mobile_content_portfolio {
+            z-index: -1;
+        }
+
+        .mobile_menu_label {
+            opacity: 0;
+            z-index: -1;
+        }
+        
+        .mobile_content {
+            opacity: 0;
+
+            &_portfolio_slide_title_wrap {
                 opacity: 0;
-                z-index: -1;
             }
-            
-            .mobile_content {
-                opacity: 0;
+        }
 
-                &_portfolio_slide_title_wrap {
-                    opacity: 0;
-                }
-            }
+        .mobile_footer_portfolio {
+            opacity: 0;
+        }
 
-            .mobile_footer_portfolio {
-                opacity: 0;
-            }
-            
-            .mobile_menu {
-                opacity: 1;
-            }
-
-            .mobile_title {
-                position: relative;
-                transform: translateX(-150%);
-            }
-            
-            .mobile_contacts {
-                position: relative;
-                transform: translateY(100%);
-            }
-            
-            .mobile_social_list {
-                position: relative;
-                transform: translateX(300%);
-            }
+        .mobile_title {
+            position: relative;
+            transform: translateX(-150%);
+        }
+        
+        .mobile_contacts {
+            position: relative;
+            transform: translateY(100%);
+        }
+        
+        .mobile_social_list {
+            position: relative;
+            transform: translateX(300%);
         }
     }
 }
