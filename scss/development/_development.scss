@@ -113,7 +113,7 @@
 
                         &:nth-child(2n)::before {
                             top: -15%;
-                            left: 8%;
+                            left: 6%;
                         }
 
                         &:nth-child(3)::before {
@@ -322,7 +322,6 @@
             }
         }
     }
-
 }
 
 .mobile_content_development {
@@ -446,8 +445,13 @@
                 }
 
                 &_item {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: flex-start;
+                    height: 100px;
                     width: 42.3%;
-                    padding: 5.5%;
+                    padding: 3%;
                 }
             }
         }

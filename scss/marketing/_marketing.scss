@@ -113,7 +113,7 @@
 
                         &:nth-child(2n)::before {
                             top: -15%;
-                            left: 8%;
+                            left: 6%;
                         }
 
                         &:nth-child(3)::before {
@@ -246,35 +246,6 @@
             padding: 4.87% 0;
             z-index: 1;
 
-            // &:last-child {
-
-            //     .marketing_item_inner {
-
-            //         &_img {
-            //             width: 37%;
-            //             top: 10%;
-            //             left: 7%;
-            //         }
-    
-            //         &_title {
-            //             position: relative;
-            //             right: 27%;
-            //             color: $gray_1;
-            //             -webkit-text-fill-color: transparent;
-            //             -webkit-text-stroke: 1px $white_1;
-            //         }
-    
-            //         &_description {
-            //             width: 55%;
-            //             margin-left: 15%;
-            //         }
-
-            //         &_title_small span:last-child::before {
-            //             left: 15ch;
-            //         }
-            //     }
-            // }
-
             &_img {
                 position: absolute;
                 top: 50%;
@@ -332,7 +303,6 @@
             }
         }
     }
-
 }
 
 .mobile_content_marketing {
@@ -347,63 +317,24 @@
             padding: 0;
             right: auto;
             left: 0;
-
-            &:first-child {
-                width: 45%;
-                padding-left: 3%;
-            }
-
-            &:last-child {
-                width: 55%;
-                
-                .marketing_item_inner {
-
-                    &_img {
-                        top: auto;
-                        left: 35%;
-                        bottom: 10%;
-                        width: 50%;
-                    }
-
-                    &_title {
-                        left: 0;
-                    }
-
-                    &_title_small {
-                        margin-left: 8%;
-                        
-                        span {
-                            color: $white_1;
-
-                            &::before {
-                                left: 35%;
-                                background-color: $white_1;
-                            }
-                        }
-                    }
-
-                    &_description {
-                        margin-left: 40%;
-                        color: $white_1;
-                    }
-                }
-            }
+            padding-left: 3%;
 
             &_img {
                 top: auto;
                 left: 0;
-                bottom: 0;
-                width: 75%;
+                bottom: -20px;
+                width: 40%;
             }
             
             &_title {
                 @include font(39px, 40px, 'Rubik-Bold');
 
-                margin-bottom: 15%;
+                width: 50%;
+                margin-bottom: 4%;
 
                 &_small {
                     position: relative;
-                    margin: 0 0 10% 10%;
+                    margin: 0 0 5% 32%;
 
                     span {
 
@@ -412,27 +343,32 @@
                         }
 
                         &::before {
-                            left: 30%;
-                            width: 20%;
+                            left: 25%;
+                            width: 75%;
                         }
                     }
+                }
+
+                span {
+                    margin-left: 25%;
                 }
             }
 
             &_description {
                 text-align: left;
-                width: 65%;
-                margin: 0 0 10% 37%;
+                width: 50%;
+                margin: 0 0 10% 50%;
+                padding: 0 5px;
             }
         }
         
         &:first-child {
-            width: 240%;
+            width: 200%;
             justify-content: space-between;
         }
 
         &:nth-child(2) {
-            width: 170%;
+            width: 140%;
             justify-content: flex-start;
 
             .marketing_item {
@@ -456,8 +392,13 @@
                 }
 
                 &_item {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: flex-start;
+                    height: 100px;
                     width: 42.3%;
-                    padding: 5.5%;
+                    padding: 3%;
                 }
             }
         }
@@ -685,7 +626,7 @@
             }
 
             .marketing_price_item {
-                @include font(10px, 14px, 'Rubik-Bold');
+                @include font(11px, 14px, 'Rubik-Bold');
 
                 width: 60%;
                 padding: 2.5% 1.5%;
