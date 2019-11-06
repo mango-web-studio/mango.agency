@@ -1,5 +1,5 @@
 .development_bg {
-    @include background(url('../img/development/development_bg.jpg'));
+    @include background((url(../img/development/development_bg_1.png), url(../img/development/development_bg.jpg)));
 
     position: fixed;
     top: 0;
@@ -17,7 +17,7 @@
 }
 
 #menu_checkbox:checked ~ .mobile {
-        
+
     .mobile_content_development {
         opacity: 0;
     }
@@ -37,25 +37,33 @@
     &_list {
         display: flex;
         height: calc(100% + 18px);
-        overflow-x: scroll;
         padding-bottom: 18px;
+        overflow-x: scroll;
         transition: opacity 1s;
 
         &::-webkit-scrollbar {
             display: none;
         }
     }
-        
+
     &_item {
         display: flex;
-        width: 100%;
         flex-shrink: 0;
-        padding: 0 4.6875%;
-    
+        padding: 0 4.69%;
+
+        &:first-child {
+            @include background(url(../img/development/development_item_1.png));
+
+            background-size: contain;
+        }
+
         &:nth-child(2) {
+            @include background(url(../img/development/development_item_2.png));
+
             flex-direction: column;
             justify-content: space-between;
-            padding: 4.41% 4.6875%;
+            padding: 4.41% 4.69%;
+            background-size: auto;
 
             .development {
 
@@ -63,10 +71,10 @@
 
                     &_title {
                         @include font(100px, 110px, 'Rubik-Bold');
-    
+
                         color: $white_1;
                         white-space: nowrap;
-    
+
                         span {
                             color: $gray_1;
                             -webkit-text-fill-color: transparent;
@@ -74,66 +82,17 @@
                         }
                     }
                 }
-
-                &_price {
-
-                    &_list {
-                        display: flex;
-                        justify-content: space-between;
-                        width: 107%;
-                        position: relative;
-                        left: 50%;
-                        transform: translateX(-50%);
-                        color: $white_1;
-                    }
-                    
-                    &_item {
-                        @include font(25px, 33px, 'Rubik-Bold');
-
-                        position: relative;
-                        width: 23%;
-                        padding: 4.03% 2.15%;
-                        border: 1px solid $white_1;
-
-                        &::before {
-                            content: '';
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            width: 100%;
-                            height: 100%;
-                            background-image: url('../img/development/development_price_rectangle.png');
-                            z-index: -1;
-                        }
-
-                        &:first-child::before {
-                            top: 15%;
-                            left: -8%;
-                        }
-
-                        &:nth-child(2n)::before {
-                            top: -15%;
-                            left: 6%;
-                        }
-
-                        &:nth-child(3)::before {
-                            top: 15%;
-                            left: 5%;
-                        }
-
-                        span {
-                            color: $purple_1;                            
-                        }
-                    }
-                }
             }
         }
-    
+
         &:last-child {
+            @include background(url(../img/development/development_item_3.png));
+
             width: 80%;
             flex-direction: column;
             justify-content: space-between;
-            padding: 4.41% 4.6875%;
+            padding: 4.41% 4.69%;
+            background-size: contain;
 
             .development {
 
@@ -141,7 +100,7 @@
 
                     &_title {
                         @include font(100px, 110px, 'Rubik-Bold');
-    
+
                         color: $white_1;
                         white-space: nowrap;
                     }
@@ -156,7 +115,7 @@
                         position: relative;
                         margin-top: 10px;
                         padding: 0 10px;
-                        
+
                         &::before {
                             content: '';
                             position: absolute;
@@ -168,7 +127,7 @@
                             border: 1px solid $white_1;
                             transition: 0.2s, transform 0.2s 0.2s;
                         }
-                        
+
                         &:hover::before {
                             width: 100%;
                             left: 0;
@@ -189,7 +148,7 @@
                         margin-right: 16.61%;
                         color: $white_1;
                         resize: none;
-                        
+
                         &::placeholder {
                             @include font(18px, 40px, 'Rubik-Regular');
 
@@ -225,7 +184,7 @@
                         resize: none;
                         vertical-align: bottom;
                         outline: none;
-                        
+
                         &::placeholder {
                             @include font(18px, 40px, 'Rubik-Regular');
 
@@ -239,56 +198,28 @@
         &_inner {
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: center;
             position: relative;
-            width: 50%;
             color: $white_1;
-            padding: 4.87% 0;
-            z-index: 1;
 
-            &:last-child {
-
-                .development_item_inner {
-
-                    &_img {
-                        width: 37%;
-                        top: 10%;
-                        left: 7%;
-                    }
-    
-                    &_title {
-                        position: relative;
-                        right: 27%;
-                        color: $gray_1;
-                        -webkit-text-fill-color: transparent;
-                        -webkit-text-stroke: 1px $white_1;
-                    }
-    
-                    &_description {
-                        width: 55%;
-                        margin-left: 15%;
-                    }
-
-                    &_title_small span:last-child::before {
-                        left: 15ch;
-                    }
-                }
-            }
-
-            &_img {
-                position: absolute;
-                top: 23%;
-                left: 31%;
-                width: 30%;
-                z-index: -1;
+            &:first-child {
+                justify-content: space-between;
+                width: 745px;
+                padding: 4.87% 0;
             }
 
             &_title {
                 @include font(100px, 110px, 'Rubik-Bold');
             }
 
-            &_title_small {
+            &_description {
+                padding-left: 21.48%;
+            }
+
+            &_subtitle {
                 @include font(18px, 30px, 'Rubik-Regular');
+
+                margin-bottom: 7.7%;
 
                 span {
                     display: block;
@@ -300,11 +231,15 @@
                     &:last-child {
                         position: relative;
 
+                        &::first-letter {
+                            color: $pink_1;
+                        }
+
                         &::before {
                             content: '';
                             position: absolute;
                             bottom: 0;
-                            left: 10ch;
+                            left: 12ch;
                             width: 30%;
                             height: 1px;
                             background-color: $white_1;
@@ -313,12 +248,90 @@
                 }
             }
 
-            &_description {
+            &_paragraph {
                 @include font(18px, 30px, 'Rubik-Regular');
 
-                width: 79%;
-                margin: 0 auto;
-                margin-left: 8%;
+                margin-left: 134px;
+            }
+        }
+    }
+
+    &_price {
+
+        &_list {
+            display: flex;
+            justify-content: space-between;
+            width: 107%;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            color: $white_1;
+        }
+
+        &_item {
+            @include font(25px, 33px, 'Rubik-Bold');
+
+            position: relative;
+            width: 23%;
+            padding: 4.03% 2.15%;
+            border: 1px solid $white_1;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: url('../img/development/development_price_rectangle.png');
+                z-index: -1;
+            }
+
+            &:first-child::before {
+                top: 15%;
+                left: -8%;
+            }
+
+            &:nth-child(2n)::before {
+                top: -15%;
+                left: 6%;
+            }
+
+            &:nth-child(3)::before {
+                top: 15%;
+                left: 5%;
+            }
+
+            span {
+                color: $purple_1;
+            }
+        }
+    }
+
+    &_design {
+
+        &_list {
+            display: flex;
+            color: $white_1;
+
+            &:last-child {
+                margin-left: 215px;
+            }
+        }
+
+        &_item {
+            @include font(25px, 33px, 'Rubik-Bold');
+
+            width: 430px;
+            padding: 70px;
+            margin: 0 30px 30px 0;
+            border: 1px solid $white_1;
+
+            &_description {
+
+                span {
+                    color: $purple_1;
+                }
             }
         }
     }
@@ -344,7 +357,7 @@
 
             &:last-child {
                 width: 55%;
-                
+
                 .development_item_inner {
 
                     &_img {
@@ -360,7 +373,7 @@
 
                     &_title_small {
                         margin-left: 8%;
-                        
+
                         span {
                             color: $white_1;
 
@@ -384,7 +397,7 @@
                 bottom: 0;
                 width: 75%;
             }
-            
+
             &_title {
                 @include font(39px, 40px, 'Rubik-Bold');
 
@@ -414,7 +427,7 @@
                 margin: 0 0 10% 37%;
             }
         }
-        
+
         &:first-child {
             width: 240%;
             justify-content: space-between;
@@ -475,7 +488,7 @@
                 input {
                     width: 100%;
                     margin-bottom: 20px;
-                    
+
                     &:first-child[type="text"] {
                         margin-bottom: 20px;
                     }
@@ -484,7 +497,7 @@
                         @include font(12px, 20px, 'Rubik-Regular');
                     }
                 }
-                
+
                 textarea {
                     width: 100%;
                     border: 1px solid $white_1;
@@ -507,7 +520,7 @@
                         border-color: $purple_1;
                         transform: rotate(0);
                     }
-                    
+
                     input {
                         margin: 0;
                         padding: 0 25px;
@@ -533,14 +546,14 @@
             .development_item_title {
                 @include font(90px, 100px, 'Rubik-Bold');
             }
-            
+
             .development_price_item {
                 @include font(18px, 28px, 'Rubik-Bold');
             }
         }
 
         &:last-child {
-    
+
             .development_item_title {
                 @include font(90px, 100px, 'Rubik-Bold');
             }
@@ -549,13 +562,13 @@
 
                 input {
                     @include font(14px, 30px, 'Rubik-Regular');
-            
+
                     margin-right: 13%;
                 }
 
                 textarea {
                     @include font(14px, 30px, 'Rubik-Regular');
-            
+
                     margin-right: 8%;
                 }
             }
@@ -601,13 +614,13 @@
 
                 input {
                     @include font(14px, 30px, 'Rubik-Regular');
-            
+
                     margin-right: 15%;
                 }
 
                 textarea {
                     @include font(14px, 30px, 'Rubik-Regular');
-            
+
                     margin-right: 8%;
                 }
             }
@@ -629,7 +642,7 @@
             .development_item_title {
                 @include font(50px, 60px, 'Rubik-Bold');
             }
-            
+
             .development_price_item {
                 @include font(12px, 18px, 'Rubik-Bold');
             }
@@ -700,25 +713,25 @@
         }
 
         &:last-child {
-            
+
             .development_item_title {
                 @include font(40px, 60px, 'Rubik-Bold');
             }
-    
+
             .development_form input {
                 @include font(12px, 30px, 'Rubik-Regular');
-    
+
                 margin-right: 10%;
-    
+
                 &:first-child[type="text"] {
                     margin-bottom: 7%;
                 }
             }
-    
+
             .development_form textarea {
                 @include font(12px, 30px, 'Rubik-Regular');
             }
-    
+
             .development_form {
                 display: flex;
                 justify-content: space-between;
@@ -727,26 +740,26 @@
                 flex-wrap: wrap;
                 width: 100%;
                 height: 40%;
-        
+
                 input {
                     width: 40%;
                     margin: 0;
-        
+
                     &:first-child[type="text"] {
                         margin: 0;
                     }
                 }
-                
+
                 textarea {
                     width: 40%;
                     margin: 0;
                 }
-        
+
                 .submit_wrap {
                     display: block;
                     width: 25%;
                     margin: auto;
-        
+
                     &::before {
                         left: 33%;
                         width: 5%;

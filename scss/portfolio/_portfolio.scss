@@ -1,5 +1,5 @@
 .portfolio_bg {
-    @include background(url('../img/portfolio/portfolio_bg.jpg'));
+    @include background((url(../img/portfolio/portfolio_bg_2.png), url(../img/portfolio/portfolio_bg_1.png), url(../img/portfolio/portfolio_bg.jpg)), right, center, no-repeat, (105%, cover));
 
     position: fixed;
     top: 0;
@@ -45,22 +45,24 @@
             position: relative;
             height: 100%;
             margin: 0 2%;
+            cursor: pointer;
 
-
-            &_link {
-                outline: none;
+            &_inner {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                width: 100%;
 
                 &:hover img {
                     filter: brightness(1.5);
-                    opacity: 1;
                 }
             }
 
             &_title_wrap {
                 position: absolute;
-                left: 10%;
-                bottom: 5%;
-                opacity: 1;
+                left: 7%;
+                bottom: -38px;
                 transition: 1s;
             }
             
@@ -89,14 +91,16 @@
                 }
             }
 
-            &_img {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
+            &_img_wrap {
                 width: 100%;
                 margin: auto;
-                opacity: 0.8;
+                background-color: black;
+
+            }
+            
+            &_img {
+                width: 100%;
+                margin: auto;
                 transition: 1s;
             }
         }
@@ -119,17 +123,19 @@
 // screen width <=1366px
 @media only screen and (max-width: 1366px) {
     
-    .content_portfolio_slide_title {
-        @include font(45px, 50px, 'Rubik-Bold');
-    }
-    
-    .content_portfolio_slide_subtitle {
-        @include font(12px, 16px, 'Rubik-Regular');
-    }
+    .content_portfolio_slide {
 
-    .content_portfolio_slide_title_wrap {
-        left: 10%;
-        bottom: 0;
+        &_title {
+            @include font(45px, 50px, 'Rubik-Bold');
+        }
+
+        &_subtitle {
+            @include font(12px, 16px, 'Rubik-Regular');
+        }
+
+        &_title_wrap {
+            bottom: -25px;
+        }
     }
 }
 

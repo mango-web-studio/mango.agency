@@ -1,13 +1,13 @@
-.development_bg {
-    @include background(url('../img/development/development_bg.jpg'));
+// .development_bg {
+//     @include background(url('../img/development/development_bg.jpg'));
 
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-}
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     height: 100%;
+//     width: 100%;
+//     z-index: -1;
+// }
 
 .menu_checkbox:checked ~ .container {
 
