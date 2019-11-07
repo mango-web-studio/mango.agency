@@ -1,34 +1,110 @@
-.main {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    height: 100vh;
-    background-color: rgb(245, 245, 94);
+.about_bg {
+    @include background((url(../img/about/about_bg_1.png), url(../img/about/about_bg.jpg)));
 
-    // &::-webkit-scrollbar {
-    //     display: none;
-    // }
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
 
-    div {
-        width: 100vw;
+.menu_checkbox:checked ~ .container {
+
+    .about_list {
+        opacity: 0;
+    }
+}
+
+#menu_checkbox:checked ~ .mobile {
+
+    .mobile_content_about {
+        opacity: 0;
+    }
+}
+
+.content {
+
+    &_about {
+        position: relative;
+        height: 70%;
+        overflow: hidden;
+    }
+}
+
+.about {
+
+    &_list {
+        display: flex;
+        height: calc(100% + 18px);
+        padding-bottom: 18px;
+        overflow-x: scroll;
+        transition: opacity 1s;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    &_item {
+        display: flex;
         flex-shrink: 0;
-        font-size: 40px;
-        text-align: center;
+        padding-left: 4.69%;
 
-        &:first-child {
-            background-color: lightcoral;
+        &_inner {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            color: $white_1;
         }
 
-        &:nth-child(2) {
-            background-color: lightseagreen;
+        &_title {
+            @include font(100px, 100px, 'Rubik-Bold');
+        }
+        
+        &_description {
+            display: flex;
+            align-items: flex-end;
+
+            &_paragraph {
+                @include font(16px, 32px, 'Rubik-Regular');
+
+                width: 570px;
+                margin-left: 100px;
+            }
         }
 
-        &:nth-child(3) {
-            background-color: lightgreen;
-        }
+        &_link {
+            @include font(22px, 40px, 'Rubik-Regular');
 
-        &:last-child {
-            background-color: lightblue;
+            align-self: baseline;
+            position: relative;
+            display: block;
+            border: 0;
+            padding: 0 15px;
+            margin-left: 262px;
+            color: #AC54E2;
+            text-transform: lowercase;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: calc(15px + 1ch);
+                width: 10px;
+                height: 100%;
+                transform: rotate(-20deg);
+                border: 1px solid #ffffff;
+                transition: 0.2s, transform 0.2s;
+            }
+
+            &:hover::before {
+                width: 100%;
+                left: 0;
+                border-color: #AC54E2;
+                transform: rotate(0deg);
+                transition: 0.2s, width 0.2s 0.2s, left 0.2s 0.2s;
+            }
         }
     }
 }

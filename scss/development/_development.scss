@@ -49,150 +49,28 @@
     &_item {
         display: flex;
         flex-shrink: 0;
-        padding: 0 4.69%;
+        padding-left: 4.69%;
 
         &:first-child {
             @include background(url(../img/development/development_item_1.png));
 
             background-size: contain;
+            background-position: 20% 50%;
         }
 
         &:nth-child(2) {
             @include background(url(../img/development/development_item_2.png));
 
-            flex-direction: column;
-            justify-content: space-between;
-            padding: 4.41% 4.69%;
             background-size: auto;
-
-            .development {
-
-                &_item {
-
-                    &_title {
-                        @include font(100px, 110px, 'Rubik-Bold');
-
-                        color: $white_1;
-                        white-space: nowrap;
-
-                        span {
-                            color: $gray_1;
-                            -webkit-text-fill-color: transparent;
-                            -webkit-text-stroke: 1px $gray_4;
-                        }
-                    }
-                }
-            }
+            background-position: 15% 0;
         }
 
         &:last-child {
             @include background(url(../img/development/development_item_3.png));
 
-            width: 80%;
-            flex-direction: column;
-            justify-content: space-between;
-            padding: 4.41% 4.69%;
             background-size: contain;
-
-            .development {
-
-                &_item {
-
-                    &_title {
-                        @include font(100px, 110px, 'Rubik-Bold');
-
-                        color: $white_1;
-                        white-space: nowrap;
-                    }
-                }
-
-                &_form {
-                    width: 85%;
-                    align-self: flex-end;
-
-                    .submit_wrap {
-                        display: inline-block;
-                        position: relative;
-                        margin-top: 10px;
-                        padding: 0 10px;
-
-                        &::before {
-                            content: '';
-                            position: absolute;
-                            top: 0;
-                            left: 4.5ch;
-                            width: 8%;
-                            height: 100%;
-                            transform: rotate(-20deg);
-                            border: 1px solid $white_1;
-                            transition: 0.2s, transform 0.2s 0.2s;
-                        }
-
-                        &:hover::before {
-                            width: 100%;
-                            left: 0;
-                            border-color: $purple_1;
-                            transform: rotate(0deg);
-                            transition: 0.2s, width 0.2s 0.2s, left 0.2s 0.2s;
-                        }
-                    }
-
-                    input {
-                        @include font(18px, 40px, 'Rubik-Regular');
-
-                        background-color: transparent;
-                        padding: 0;
-                        border: 0;
-                        border-bottom: 1px solid $white_1;
-                        width: 30.79%;
-                        margin-right: 16.61%;
-                        color: $white_1;
-                        resize: none;
-
-                        &::placeholder {
-                            @include font(18px, 40px, 'Rubik-Regular');
-
-                            color: $white_1;
-                        }
-
-                        &[type="submit"] {
-                            position: relative;
-                            width: 100%;
-                            margin: 0;
-                            border: 0;
-                            padding: 0 5px;
-                            color: $purple_1;
-                            cursor: pointer;
-                        }
-
-                        &:first-child[type="text"] {
-                            margin-bottom: 9.13%;
-                        }
-                    }
-
-                    textarea {
-                        @include font(18px, 40px, 'Rubik-Regular');
-
-                        background-color: transparent;
-                        padding: 0;
-                        border: 0;
-                        border-bottom: 1px solid $white_1;
-                        width: 30.79%;
-                        margin-right: 9.22%;
-                        color: $white_1;
-                        overflow: hidden;
-                        resize: none;
-                        vertical-align: bottom;
-                        outline: none;
-
-                        &::placeholder {
-                            @include font(18px, 40px, 'Rubik-Regular');
-
-                            color: $white_1;
-                        }
-                    }
-                }
-            }
+            background-position: 0 0;
+            padding-right: 4.69%;
         }
 
         &_inner {
@@ -205,7 +83,7 @@
             &:first-child {
                 justify-content: space-between;
                 width: 745px;
-                padding: 4.87% 0;
+                padding: 2% 0 5% 0;
             }
 
             &_title {
@@ -308,7 +186,9 @@
         }
     }
 
-    &_design {
+    &_design,
+    &_develop,
+    &_promotion {
 
         &_list {
             display: flex;
@@ -322,7 +202,7 @@
         &_item {
             @include font(25px, 33px, 'Rubik-Bold');
 
-            width: 430px;
+            min-width: 430px;
             padding: 70px;
             margin: 0 30px 30px 0;
             border: 1px solid $white_1;
@@ -332,6 +212,47 @@
                 span {
                     color: $purple_1;
                 }
+            }
+
+            &_link {
+                align-self: center;
+                min-width: auto;
+                padding: 0;
+                margin: 0 0 0 70px;
+                border: unset;
+                cursor: pointer;
+            }
+        }
+
+        &_link {
+            @include font(22px, 40px, 'Rubik-Regular');
+
+            position: relative;
+            display: block;
+            margin: -30px 0 0 0;
+            border: 0;
+            padding: 0 15px;
+            color: #AC54E2;
+            text-transform: lowercase;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: calc(15px + 1ch);
+                width: 10px;
+                height: 100%;
+                transform: rotate(-20deg);
+                border: 1px solid #ffffff;
+                transition: 0.2s, transform 0.2s;
+            }
+
+            &:hover::before {
+                width: 100%;
+                left: 0;
+                border-color: #AC54E2;
+                transform: rotate(0deg);
+                transition: 0.2s, width 0.2s 0.2s, left 0.2s 0.2s;
             }
         }
     }
