@@ -34,7 +34,7 @@
 
 .menu_checkbox {
     display: none;
-    
+
     &:checked ~ .container {
         background-color: $black_3;
 
@@ -58,31 +58,31 @@
         height: 70%;
         padding: 0 4.6875%;
         transition: 1s;
-        
+
         &_inner {
             height: 100%;
             width: 100%;
             transition: 1s;
-    
+
             .title {
                 position: relative;
                 color: $white_1;
                 height: 100%;
                 text-transform: uppercase;
                 pointer-events: none;
-    
+
                 .design_word {
                     position: absolute;
                     width: 23%;
                     left: 0;
                     top: 50%;
                     transform: translateY(-120%);
-    
+
                     &_1 {
                         width: 100%;
                         animation: design-1 1.5s;
                     }
-                    
+
                     &_2 {
                         position: absolute;
                         top: 0;
@@ -91,12 +91,12 @@
                         animation: design-2 1.5s;
                     }
                 }
-    
+
                 p {
                     @include font-fluid(90px, 100px, 'Rubik-Bold');
-    
+
                     display: flex;
-                    
+
                     &:nth-child(2) {
                         position: absolute;
                         left: 50%;
@@ -110,20 +110,19 @@
                         letter-spacing: 0.44em;
                         animation: text-2 1s steps(10, end);
                     }
-                
+
                     &:nth-child(3) {
                         position: absolute;
                         left: 50%;
                         top: 50%;
                         transform: translate(-40%, 20%);
                         letter-spacing: 3px;
-                        // animation: text-3 2s;
-    
+
                         span {
                             animation: appear 2s;
                         }
                     }
-                    
+
                     &:nth-child(4) {
                         position: absolute;
                         left: 50%;
@@ -132,17 +131,17 @@
                         letter-spacing: 3px;
                         color: $gray_1;
                         // animation: text-3 2s;
-    
+
                         span {
                             animation: appear 2s;
                         }
                     }
                 }
             }
-    
+
             .subtitle {
                 @include font-fluid(18px, 20px, 'Rubik-Light');
-    
+
                 position: absolute;
                 left: 50%;
                 top: 50%;

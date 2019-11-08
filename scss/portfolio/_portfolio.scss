@@ -1,5 +1,5 @@
 .portfolio_bg {
-    @include background((url(../img/portfolio/portfolio_bg_2.png), url(../img/portfolio/portfolio_bg_1.png), url(../img/portfolio/portfolio_bg.jpg)), right, center, no-repeat, (105%, cover));
+    @include background((url(../img/portfolio/portfolio_bg_2.png), url(../img/portfolio/portfolio_bg_1.png), url(../img/portfolio/portfolio_bg.jpg)));
 
     position: fixed;
     top: 0;
@@ -20,6 +20,42 @@
 
         .content_portfolio_slide_title_wrap {
             opacity: 0;
+        }
+    }
+}
+
+.gallery_popup {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    z-index: 1;
+
+    &_inner {
+        min-height: 100%;
+        background-color: $black_5;
+        padding: 100px;
+        margin: 0 auto;
+    }
+
+    &_img {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    &_close {
+        position: fixed;
+        right: 55px;
+        top: 40px;
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+
+        &_svg {
+            fill: $white_1;
         }
     }
 }
@@ -45,7 +81,6 @@
             position: relative;
             height: 100%;
             margin: 0 2%;
-            cursor: pointer;
 
             &_inner {
                 position: absolute;
@@ -53,9 +88,11 @@
                 top: 50%;
                 transform: translate(-50%, -50%);
                 width: 100%;
+                cursor: pointer;
 
-                &:hover img {
-                    filter: brightness(1.5);
+                &:hover .content_portfolio_slide_img {
+                    filter: brightness(1.1);
+                    opacity: 7;
                 }
             }
 
@@ -63,7 +100,6 @@
                 position: absolute;
                 left: 7%;
                 bottom: -38px;
-                transition: 1s;
             }
             
             &_title {
@@ -101,7 +137,8 @@
             &_img {
                 width: 100%;
                 margin: auto;
-                transition: 1s;
+                opacity: 0.7;
+                transition: 0.5s;
             }
         }
     }
@@ -122,7 +159,7 @@
 
 // screen width <=1366px
 @media only screen and (max-width: 1366px) {
-    
+
     .content_portfolio_slide {
 
         &_title {
@@ -141,11 +178,11 @@
 
 // screen width <=768px
 @media only screen and (max-width: 768px) {
-    
+
     .content_portfolio_slide_title {
         @include font(30px, 32px, 'Rubik-Bold');
     }
-    
+
     .content_portfolio_slide_subtitle {
         @include font(10px, 16px, 'Rubik-Regular');
     }
@@ -158,7 +195,7 @@
 
 // screen width <=500px
 @media only screen and (max-width: 500px) {
-    
+
     .mobile_content_portfolio {
 
         &_slide {
@@ -172,7 +209,7 @@
                 left: 0;
                 transform: translate(0, 0);
             }
-            
+
             &_title_wrap {
                 position: relative;
                 transform: translate(0, 0);
@@ -184,11 +221,11 @@
             &_title {
                 @include font(26px, 28px, 'Rubik-Bold');
             }
-        
+
             &_subtitle {
                 @include font(10px, 16px, 'Rubik-Regular');
             }
-    
+
             &_subtitle img {
                 width: 20px;
             }
