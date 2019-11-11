@@ -2532,12 +2532,19 @@ textarea {
 }
 
 .development_item_inner:first-child {
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 745px;
-  padding: 2% 0 5% 0;
+}
+
+.development_item_inner:first-child .development_item_inner_title {
+  min-height: 208px;
+}
+
+.development_item_inner:first-child .development_item_inner_description {
+  min-height: 208px;
 }
 
 .development_item_inner_title {
@@ -2550,7 +2557,7 @@ textarea {
 
 .development_item_inner_subtitle {
   font: 1.8rem/3rem "Rubik-Regular";
-  margin-bottom: 7.7%;
+  margin-bottom: 45px;
 }
 
 .development_item_inner_subtitle span {
@@ -2652,6 +2659,16 @@ textarea {
   margin-left: 215px;
 }
 
+.development_design_list:last-child .development_design_item,
+.development_design_list:last-child .development_develop_item,
+.development_design_list:last-child .development_promotion_item, .development_develop_list:last-child .development_design_item,
+.development_develop_list:last-child .development_develop_item,
+.development_develop_list:last-child .development_promotion_item, .development_promotion_list:last-child .development_design_item,
+.development_promotion_list:last-child .development_develop_item,
+.development_promotion_list:last-child .development_promotion_item {
+  margin-bottom: 0;
+}
+
 .development_design_item, .development_develop_item, .development_promotion_item {
   font: 2.5rem/3.3rem "Rubik-Bold";
   min-width: 430px;
@@ -2679,7 +2696,6 @@ textarea {
   font: 2.2rem/4rem "Rubik-Regular";
   position: relative;
   display: block;
-  margin: -30px 0 0 0;
   border: 0;
   padding: 0 15px;
   color: #AC54E2;
@@ -2709,12 +2725,14 @@ textarea {
   width: 100%;
   left: 0;
   border-color: #AC54E2;
+  background-color: #000000;
   -webkit-transform: rotate(0deg);
       -ms-transform: rotate(0deg);
           transform: rotate(0deg);
   -webkit-transition: 0.2s, width 0.2s 0.2s, left 0.2s 0.2s;
   -o-transition: 0.2s, width 0.2s 0.2s, left 0.2s 0.2s;
   transition: 0.2s, width 0.2s 0.2s, left 0.2s 0.2s;
+  z-index: -1;
 }
 
 .mobile_content_development {
@@ -2980,6 +2998,23 @@ textarea {
     font: 1.4rem/3rem "Rubik-Regular";
     margin-right: 8%;
   }
+  .development_item_inner:first-child .development_item_inner_title {
+    min-height: 168px;
+  }
+  .development_item_inner:first-child .development_item_inner_description {
+    min-height: 168px;
+  }
+  .development_item_inner_subtitle {
+    margin-bottom: 15px;
+  }
+  .development_design_item, .development_develop_item, .development_promotion_item {
+    min-width: 370px;
+    padding: 50px;
+  }
+  .development_design_item_link, .development_develop_item_link, .development_promotion_item_link {
+    min-width: auto;
+    padding: unset;
+  }
 }
 
 @media only screen and (max-width: 1366px) {
@@ -3008,6 +3043,11 @@ textarea {
   .development_item:last-child .development_form textarea {
     font: 1.4rem/3rem "Rubik-Regular";
     margin-right: 8%;
+  }
+  .development_design_item_description,
+  .development_develop_item_description,
+  .development_promotion_item_description {
+    font: 2rem/2.6rem "Rubik-Bold";
   }
 }
 
