@@ -9,7 +9,7 @@
     z-index: -1;
 }
 
-#menu_checkbox {
+.menu_checkbox {
 
     &:checked ~ .container {
 
@@ -196,12 +196,58 @@
 // screen width <=500px
 @media only screen and (max-width: 500px) {
 
+    .menu_checkbox {
+
+        &:checked ~ .mobile {
+
+            .mobile_content_portfolio {
+                opacity: 0;
+            }
+        }
+    }
+
+    .mobile_gallery_popup {
+        display: none;
+        position: relative;
+        height: 100%;
+        padding: 50px;
+        overflow-y: scroll;
+        background-color: $black_5;
+        z-index: 1;
+
+        &_img {
+            max-width: 100%;
+        }
+
+        &_close {
+            position: fixed;
+            right: 20px;
+            top: 20px;
+            width: 15px;
+            height: 15px;
+            cursor: pointer;
+
+            &_svg {
+                fill: $white_1;
+            }
+        }
+    }
+
     .mobile_content_portfolio {
+        transition: 1s;
 
         &_slide {
             top: 50%;
             transform: translateY(-50%);
             margin: 0;
+
+            &_inner {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                width: 100%;
+            }
 
             &_img {
                 position: relative;
@@ -231,8 +277,56 @@
             }
         }
     }
+}
 
-    .slick-slide {
-        height: 65%;
+
+@media only screen and (max-width: 768px) and (orientation: landscape) {
+
+    .container {
+        position: fixed;
+        height: 100%;
+        color: $white_1;
+
+        &::before {
+            @include font(20px, 24px, 'Rubik-Bold');
+
+            content: 'Turn your device over.';
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            color: $purple_1;
+        }
+
+        .header,
+        .content_main,
+        .content_portfolio,
+        .content_development,
+        .content_about,
+        .content_contacts,
+        .footer {
+            display: none;
+        }
+    }
+
+    .mobile {
+        position: fixed;
+
+        &::before {
+            content: 'Turn your device.';
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &_header,
+        &_content_main,
+        &_content_portfolio,
+        &_content_development,
+        &_content_about,
+        &_content_contacts {
+            display: none;
+        }
     }
 }

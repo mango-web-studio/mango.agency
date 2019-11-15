@@ -16,7 +16,7 @@
     }
 }
 
-#menu_checkbox:checked ~ .mobile {
+.menu_checkbox:checked ~ .mobile {
 
     .mobile_content_about {
         opacity: 0;
@@ -125,9 +125,8 @@
 
                 &_description_wrap {
                     position: absolute;
-                    left: 50%;
-                    bottom: 20%;
-                    transform: translateX(-50%);
+                    width: 100%;
+                    bottom: 10%;
                     text-align: center;
                 }
     
@@ -177,7 +176,7 @@
         }
 
         &_link {
-            @include font(22px, 40px, 'Rubik-Regular');
+            @include font(22px, 36px, 'Rubik-Regular');
 
             align-self: baseline;
             position: relative;
@@ -237,10 +236,13 @@
                         &:first-child {
                             margin-left: 0;
                         }
+                    }
+                }
 
-                        &:last-child {
-                            margin-left: 90px;
-                        }
+                &_submit {
+
+                    &_wrap {
+                        margin-left: 90px;
                     }
                 }
 
@@ -249,7 +251,7 @@
                 }
 
                 &_submit {
-                    @include font(18px, 32px, 'Rubik-Regular');
+                    @include font(22px, 36px, 'Rubik-Regular');
 
                     padding: 0 15px;
                     border: 0;
@@ -266,7 +268,7 @@
                             content: '';
                             position: absolute;
                             top: 0;
-                            left: calc(15px + 1.7ch);
+                            left: calc(15px + 2.4ch);
                             width: 10px;
                             height: 100%;
                             transform: rotate(-20deg);
@@ -317,7 +319,209 @@
     }
 }
 
-// screen width <=768px
-@media only screen and (max-width: 768px) {
+// screen width <=500px
+@media only screen and (max-width: 500px) {
 
+    .mobile_content_about {
+        position: relative;
+        height: 70%;
+        overflow: hidden;
+        opacity: 1;
+        transition: 1s;
+    }
+
+    .about {
+
+        &_list {
+
+            .our_team {
+                background-size: 50%, 60%;
+                background-position: 0 0, 100% 100%;
+            }
+        }
+
+        &_item {
+            padding-left: 20px;
+
+            &:last-child {
+                padding-right: 20px;
+            }
+
+            &.our_team {
+
+                .about_item_title {
+                    margin-left: -60px;
+                }
+
+            }
+
+            &_title {
+                @include font(39px, 39px, 'Rubik-Bold');
+            }
+
+            &_description {
+                margin-left: 0;
+
+                &_paragraph {
+                    @include font(12px, 23px, 'Rubik-Regular');
+
+                    width: 380px;
+                    margin-right: 30px;
+
+                    &:last-child {
+                        margin-bottom: -60px;
+                    }
+                }
+
+                &_list {
+                    display: grid;
+                    grid: repeat(2, 140px)/repeat(3, 100px);
+                    grid-gap: 15px;
+                    margin: 0 50px;
+                }
+
+                &_item {
+                    margin-right: 0;
+                }
+
+                .our_team {
+
+                    &_img {
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;
+
+                        &_wrap {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+
+                    &_name {
+                        @include font(13px, 16px, 'Rubik-Bold');
+
+                        margin-bottom: 0;
+                    }
+
+                    &_profession {
+                        @include font(8px, 12px, 'Rubik-Regular');
+                    }
+                }
+            }
+
+            &_link {
+                @include font(14px, 36px, 'Rubik-Regular');
+
+                margin-left: 0;
+
+                &::before {
+                    width: 100%;
+                    left: 0;
+                    border-color: $purple_1;
+                    background-color: $black_0;
+                    transform: rotate(0);
+                    z-index: -1;
+                }
+            }
+
+            &_form {
+                margin-left: 0;
+
+                .form {
+                    flex-direction: column;
+
+                    &_field {
+                        @include font(14px, 25px, 'Rubik-Regular');
+
+                        margin-bottom: 15px;
+
+                        &:first-child {
+                            margin-bottom: 15px;
+                        }
+
+                        &_wrap {
+                            margin-left: 0;
+                        }
+                    }
+
+                    &_textarea {
+                        height: 75px;
+                        border: 1px solid #fff;
+                        resize: none;
+                    }
+
+                    &_submit {
+                        @include font(14px, 36px, 'Rubik-Regular');
+
+                        &_wrap {
+
+                            align-self: flex-start;
+                            margin-left: 0;
+
+                            &::before {
+                                width: 100%;
+                                left: 0;
+                                border-color: $purple_1;
+                                background-color: $black_0;
+                                transform: rotate(0);
+                                z-index: -1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width: 768px) and (orientation: landscape) {
+
+    .container {
+        position: fixed;
+        height: 100%;
+        color: $white_1;
+
+        &::before {
+            @include font(20px, 24px, 'Rubik-Bold');
+
+            content: 'Turn your device over.';
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            color: $purple_1;
+        }
+
+        .header,
+        .content_main,
+        .content_portfolio,
+        .content_development,
+        .content_about,
+        .content_contacts,
+        .footer {
+            display: none;
+        }
+    }
+
+    .mobile {
+        position: fixed;
+
+        &::before {
+            content: 'Turn your device.';
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &_header,
+        &_content_main,
+        &_content_portfolio,
+        &_content_development,
+        &_content_about,
+        &_content_contacts {
+            display: none;
+        }
+    }
 }
