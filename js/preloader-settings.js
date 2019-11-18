@@ -1,11 +1,10 @@
 $(document).ready(function(){
     // Preloader
-    var preloader       = $('#preloader'),
-        imagesCount     = $('img').length,
-        paragraphsCount = $('textContent').length,
-        percent         = 100 / (imagesCount + paragraphsCount),
-        progress        = 0,
-        loadedImg       = 0;
+    var preloader        = $('#preloader'),
+        imagesCount      = $('img').length,
+        percent          = 100 / imagesCount,
+        progress         = 0,
+        loadedImg        = 0;
 
     $(".preloader_img_wrap").circularProgress({
         color: "#C25FFF",
@@ -28,7 +27,7 @@ $(document).ready(function(){
         progress += percent;
         loadedImg++;
         if (progress >= 100 || loadedImg == imagesCount) {
-            preloader.delay(2000).fadeOut('slow');
+            preloader.delay(1300).fadeOut('slow');
         }
         $('.preloader_img_wrap').circularProgress('animate', progress, 500);
     }

@@ -392,6 +392,7 @@ textarea {
 
 .container .content_main_inner .subtitle {
   font: 0.9375vw/1.04167vw "Rubik-Light";
+  display: none;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -518,9 +519,9 @@ textarea {
   color: #ffffff;
   opacity: 0;
   cursor: pointer;
-  -webkit-transition: 1s;
-  -o-transition: 1s;
-  transition: 1s;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .header .menu_label_close:hover {
@@ -533,9 +534,9 @@ textarea {
   top: 0;
   width: 18%;
   fill: #ffffff;
-  -webkit-transition: 1s;
-  -o-transition: 1s;
-  transition: 1s;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .header .menu_label_close:hover .menu_label_close_icon {
@@ -565,9 +566,9 @@ textarea {
 .header .menu_ico_1, .header .menu_ico_2, .header .menu_ico_3 {
   border-left: 1px solid #ffffff;
   background-color: #ffffff;
-  -webkit-transition: 1s;
-  -o-transition: 1s;
-  transition: 1s;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .header .menu_ico_1 {
@@ -591,9 +592,9 @@ textarea {
 .header .menu_span {
   font: 1.8rem/2rem "Rubik-Regular";
   color: #ffffff;
-  -webkit-transition: 1s;
-  -o-transition: 1s;
-  transition: 1s;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .header .nav {
@@ -606,9 +607,9 @@ textarea {
       -ms-flex-align: center;
           align-items: center;
   width: 80%;
-  -webkit-transition: 1s;
-  -o-transition: 1s;
-  transition: 1s;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .header .nav_list {
@@ -632,9 +633,9 @@ textarea {
   font: 1.8rem/2rem "Rubik-Light";
   color: #c9c9c9;
   white-space: nowrap;
-  -webkit-transition: 1s;
-  -o-transition: 1s;
-  transition: 1s;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .header .nav_link:hover {
@@ -649,8 +650,23 @@ textarea {
   width: 7%;
 }
 
+.header .logo_link:hover .logo_img {
+  fill: #AC54E2;
+}
+
 .header .logo_img {
   width: 100%;
+  fill: #ffffff;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.header .disable_link {
+  cursor: default;
+}
+
+.header .disable_link:hover .logo_img {
   fill: #ffffff;
 }
 
@@ -705,14 +721,14 @@ textarea {
 }
 
 .footer .social_item {
-  width: 6%;
+  width: 22px;
 }
 
 .footer .social_link:hover .social_icon {
   fill: #AC54E2;
-  -webkit-transition: 1s;
-  -o-transition: 1s;
-  transition: 1s;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .footer .social_icon {
@@ -723,7 +739,7 @@ textarea {
 }
 
 .footer .contacts {
-  font: 1.8rem/2rem "Rubik-Light";
+  font: 1.6rem/2rem "Rubik-Light";
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -739,9 +755,9 @@ textarea {
 .footer .contacts .mail {
   margin-right: 9%;
   color: #c9c9c9;
-  -webkit-transition: 1s;
-  -o-transition: 1s;
-  transition: 1s;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .footer .contacts .tel:hover,
@@ -772,9 +788,9 @@ textarea {
 
 .footer .language_link {
   color: #c9c9c9;
-  -webkit-transition: 1s;
-  -o-transition: 1s;
-  transition: 1s;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .footer .language_link:hover {
@@ -1116,6 +1132,7 @@ textarea {
           align-items: center;
   height: 15%;
   padding: 20px 20px 0;
+  z-index: 1;
 }
 
 .mobile_menu_label {
@@ -1123,17 +1140,13 @@ textarea {
   position: relative;
   padding-left: 7%;
   color: #ffffff;
+  margin-bottom: -20px;
   -webkit-transition: 1s;
   -o-transition: 1s;
   transition: 1s;
 }
 
 .mobile_menu_label .menu_ico {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 30%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1141,6 +1154,14 @@ textarea {
   -webkit-justify-content: space-around;
       -ms-flex-pack: distribute;
           justify-content: space-around;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 14px;
+  width: 30%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 .mobile_menu_label .menu_ico span {
@@ -1436,6 +1457,8 @@ textarea {
 .mobile_menu_label_close {
   font: 1.2rem/1.4rem "Rubik-Regular";
   position: absolute;
+  top: -webkit-calc(50% + 12px);
+  top: calc(50% + 12px);
   left: 20px;
   padding-left: 6%;
   color: #ffffff;
@@ -1448,9 +1471,12 @@ textarea {
 
 .mobile_menu_label_close svg {
   position: absolute;
-  top: -2px;
+  top: 50%;
   left: 0;
   width: 18%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
   fill: #ffffff;
 }
 

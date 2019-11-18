@@ -13,6 +13,7 @@
         @include font(12px, 14px, 'Rubik-Regular');
 
         position: absolute;
+        top: calc(50% + 12px);
         left: 20px;
         padding-left: 6%;
         color: $white_1;
@@ -22,9 +23,10 @@
 
         svg {
             position: absolute;
-            top: -2px;
+            top: 50%;
             left: 0;
             width: 18%;
+            transform: translateY(-50%);
             fill: $white_1;
         }
     }
