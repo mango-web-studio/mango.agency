@@ -616,6 +616,7 @@ textarea {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  display: none;
   -webkit-box-align: center;
   -webkit-align-items: center;
       -ms-flex-align: center;
@@ -753,6 +754,7 @@ textarea {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  display: none;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;

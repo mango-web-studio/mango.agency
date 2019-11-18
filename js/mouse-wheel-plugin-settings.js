@@ -4,11 +4,11 @@ $(function() {
         event.preventDefault();
 
         if ( navigator.platform.toUpperCase().indexOf('MAC') >= 0 ) {
-            if(Math.abs(deltaY) >= 500) deltaY /= 500;
-            this.scrollLeft -= deltaY;
+            if(Math.abs(delta) >= 500) delta /= 500;
+            this.scrollLeft -= delta;
         } else {
-            if(Math.abs(deltaY) >= 50) deltaY /= 50;
-            this.scrollLeft -= (deltaY * 50);
+            if(Math.abs(delta) >= 50) delta /= 50;
+            this.scrollLeft -= (delta * 50);
         }
 
     });
