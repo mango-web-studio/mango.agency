@@ -11,17 +11,16 @@ window.onload = function() {
 
         for (let i = 0; i < slidesArr.length; i++) {
             slidesArr[i].addEventListener('click', function () {
-                let currentSrc      = slidesArr[i].querySelector('.content_portfolio_slide_img').src,
-                    charIndex       = currentSrc.lastIndexOf('/'),
-                    popupImgPref    = 'popup_',
-                    popupImgPrefArr = popupImgPref.split(''),
-                    currentSrcArr   = currentSrc.split('');
+                let currentSrc    = slidesArr[i].querySelector('.content_portfolio_slide_img').src,
+                    popupPref     = 'popup_',
+                    firstIndex    = currentSrc.lastIndexOf('/'),
+                    currentSrcArr = currentSrc.split('');
 
-                let img = document.createElement('img');
+                let img       = document.createElement('img');
                 img.className = 'gallery_popup_img';
                 img.alt       = 'preview';
 
-                currentSrcArr.splice(charIndex + 1, 0, ...popupImgPrefArr);
+                currentSrcArr.splice(firstIndex + 1, 0, popupPref);
                 img.src = currentSrcArr.join('');
                 galleryPopup.querySelector('.gallery_popup_inner').innerHTML = '';
                 galleryPopup.querySelector('.gallery_popup_inner').appendChild(img);
@@ -38,17 +37,16 @@ window.onload = function() {
 
         for (let i = 0; i < mobile_slidesArr.length; i++) {
             mobile_slidesArr[i].addEventListener('click', function () {
-                let currentSrc      = mobile_slidesArr[i].querySelector('.mobile_content_portfolio_slide_img').src,
-                    charIndex       = currentSrc.lastIndexOf('/'),
-                    popupImgPref    = 'popup_',
-                    popupImgPrefArr = popupImgPref.split(''),
-                    currentSrcArr   = currentSrc.split('');
+                let currentSrc    = mobile_slidesArr[i].querySelector('.mobile_content_portfolio_slide_img').src,
+                    popupPref     = 'popup_',
+                    firstIndex    = currentSrc.lastIndexOf('/'),
+                    currentSrcArr = currentSrc.split('');
 
-                let img = document.createElement('img');
+                let img       = document.createElement('img');
                 img.className = 'mobile_gallery_popup_img';
                 img.alt       = 'preview';
 
-                currentSrcArr.splice(charIndex + 1, 0, ...popupImgPrefArr);
+                currentSrcArr.splice(firstIndex + 1, 0, popupPref);
                 img.src = currentSrcArr.join('');
                 mobile_galleryPopup.querySelector('.mobile_gallery_popup_inner').innerHTML = '';
                 mobile_galleryPopup.querySelector('.mobile_gallery_popup_inner').appendChild(img);

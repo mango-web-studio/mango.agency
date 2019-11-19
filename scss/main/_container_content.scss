@@ -80,7 +80,7 @@
 
                     &_1 {
                         width: 100%;
-                        animation: design-1 1.5s;
+                        // animation: design-1 1.5s;
                     }
 
                     &_2 {
@@ -88,8 +88,16 @@
                         top: 0;
                         left: 0;
                         width: 100%;
-                        animation: design-2 1.5s;
+                        // animation: design-2 1.5s;
                     }
+                }
+
+                .animation_design_1 {
+                    animation: design-1 1.5s;
+                }
+
+                .animation_design_2 {
+                    animation: design-2 1.5s;
                 }
 
                 p {
@@ -108,7 +116,7 @@
                         -webkit-text-fill-color: transparent;
                         -webkit-text-stroke: 1px $white_1;
                         letter-spacing: 0.44em;
-                        animation: text-2 1s steps(10, end);
+                        // animation: text-2 1s steps(10, end);
                     }
 
                     &:nth-child(3) {
@@ -118,9 +126,9 @@
                         transform: translate(-40%, 20%);
                         letter-spacing: 3px;
 
-                        span {
-                            animation: appear 2s;
-                        }
+                        // span {
+                        //     animation: appear 2s;
+                        // }
                     }
 
                     &:nth-child(4) {
@@ -132,10 +140,18 @@
                         color: $gray_1;
                         // animation: text-3 2s;
 
-                        span {
-                            animation: appear 2s;
-                        }
+                        // span {
+                        //     animation: appear 2s;
+                        // }
                     }
+                }
+
+                .animation_text_2 {
+                    animation: text-2 1s steps(10, end);
+                }
+
+                .animation_span_appear {
+                    animation: appear 2s;
                 }
             }
 

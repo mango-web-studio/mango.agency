@@ -321,8 +321,6 @@ textarea {
 
 .container .content_main_inner .title .design_word_1 {
   width: 100%;
-  -webkit-animation: design-1 1.5s;
-          animation: design-1 1.5s;
 }
 
 .container .content_main_inner .title .design_word_2 {
@@ -330,6 +328,14 @@ textarea {
   top: 0;
   left: 0;
   width: 100%;
+}
+
+.container .content_main_inner .title .animation_design_1 {
+  -webkit-animation: design-1 1.5s;
+          animation: design-1 1.5s;
+}
+
+.container .content_main_inner .title .animation_design_2 {
   -webkit-animation: design-2 1.5s;
           animation: design-2 1.5s;
 }
@@ -355,8 +361,6 @@ textarea {
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 1px #ffffff;
   letter-spacing: 0.44em;
-  -webkit-animation: text-2 1s steps(10, end);
-          animation: text-2 1s steps(10, end);
 }
 
 .container .content_main_inner .title p:nth-child(3) {
@@ -367,11 +371,6 @@ textarea {
       -ms-transform: translate(-40%, 20%);
           transform: translate(-40%, 20%);
   letter-spacing: 3px;
-}
-
-.container .content_main_inner .title p:nth-child(3) span {
-  -webkit-animation: appear 2s;
-          animation: appear 2s;
 }
 
 .container .content_main_inner .title p:nth-child(4) {
@@ -385,7 +384,12 @@ textarea {
   color: #717171;
 }
 
-.container .content_main_inner .title p:nth-child(4) span {
+.container .content_main_inner .title .animation_text_2 {
+  -webkit-animation: text-2 1s steps(10, end);
+          animation: text-2 1s steps(10, end);
+}
+
+.container .content_main_inner .title .animation_span_appear {
   -webkit-animation: appear 2s;
           animation: appear 2s;
 }
@@ -1066,6 +1070,7 @@ textarea {
   position: absolute;
   top: 50%;
   left: 50%;
+  width: 60px;
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
