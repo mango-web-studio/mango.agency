@@ -175,16 +175,7 @@
 }
 
 
-// screen width <=500px
-@media only screen and (max-width: 500px) {
- 
-    .container {
-        visibility: hidden;
-        position: absolute;
-    }
-}
-
-
+// screen width <=768px
 @media only screen and (max-width: 768px) and (orientation: landscape) {
 
     .container {
@@ -233,5 +224,14 @@
         &_content_contacts {
             display: none;
         }
+    }
+}
+
+// screen width <=500px
+@media only screen and (max-width: 500px) {
+ 
+    .container {
+        visibility: hidden;
+        position: absolute;
     }
 }

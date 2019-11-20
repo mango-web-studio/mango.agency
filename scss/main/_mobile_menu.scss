@@ -10,10 +10,10 @@
 
     &_label_close {
         // @include font-fluid(70px, 70px, 'Rubik-Regular');
-        @include font(12px, 14px, 'Rubik-Regular');
+        @include font(14px, 14px, 'Rubik-Regular');
 
         position: absolute;
-        top: calc(50% + 12px);
+        top: calc(50% + 14px);
         left: 20px;
         padding-left: 6%;
         color: $white_1;

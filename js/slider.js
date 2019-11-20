@@ -11,7 +11,7 @@ $(document).ready(function(){
     $('.mobile_content_portfolio_slider').slick({
         swipeToSlide: true,
         centerMode: true,
-        centerPadding: '10px',
+        centerPadding: '30px',
         arrows: false,
         infinite: false,
         respondTo: 'window',

@@ -32,12 +32,12 @@
 
     &_menu_label {
         // @include font-fluid(70px, 70px, 'Rubik-Regular');
-        @include font(12px, 14px, 'Rubik-Regular');
+        @include font(14px, 14px, 'Rubik-Regular');
 
         position: relative;
         padding-left: 7%;
         color: $white_1;
-        margin-bottom: -20px;
+        margin-bottom: -22px;
         transition: 1s;
 
         .menu_ico {

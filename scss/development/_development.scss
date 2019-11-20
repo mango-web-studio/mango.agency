@@ -141,6 +141,82 @@
 
                 margin-left: 134px;
             }
+
+            .form {
+                display: flex;
+
+                &_field {
+                    @include font(18px, 32px, 'Rubik-Regular');
+
+                    width: 335px;
+                    padding: 0;
+                    border: 0;
+                    border-bottom: 1px solid $white_1;
+                    color: $white_1;
+                    background-color: unset;
+
+                    &:first-child {
+                        margin-bottom: 100px;
+                    }
+
+                    &_wrap {
+                        margin-left: 175px;
+
+                        &:first-child {
+                            margin-left: 0;
+                        }
+                    }
+                }
+
+                &_submit {
+
+                    &_wrap {
+                        margin-left: 90px;
+                    }
+                }
+
+                &_textarea {
+                    resize: horizontal;
+                }
+
+                &_submit {
+                    @include font(22px, 36px, 'Rubik-Regular');
+
+                    padding: 0 15px;
+                    border: 0;
+                    background-color: unset;
+                    color: $purple_1;
+                    cursor: pointer;
+                    text-transform: lowercase;
+
+                    &_wrap {
+                        position: relative;
+                        align-self: flex-end;
+
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            left: calc(15px + 2.4ch);
+                            width: 10px;
+                            height: 100%;
+                            transform: rotate(-20deg);
+                            border: 1px solid $white_1;
+                            transition: 0.2s, transform 0.2s;
+                        }
+
+                        &:hover::before {
+                            width: 100%;
+                            left: 0;
+                            border-color: $purple_1;
+                            background-color: $black_0;
+                            transform: rotate(0deg);
+                            transition: 0.2s, width 0.2s 0.2s, left 0.2s 0.2s;
+                            z-index: -1;
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -495,6 +571,55 @@
                 }
             }
         }
+
+        &_form {
+            margin-left: 0;
+
+            .form {
+                flex-direction: column;
+
+                &_field {
+                    @include font(14px, 25px, 'Rubik-Regular');
+
+                    margin-bottom: 15px;
+
+                    &:first-child {
+                        margin-bottom: 15px;
+                    }
+
+                    &_wrap {
+                        display: flex;
+                        flex-direction: column;
+                        margin-left: 0;
+                    }
+                }
+
+                &_textarea {
+                    height: 75px;
+                    border: 1px solid #fff;
+                    resize: none;
+                }
+
+                &_submit {
+                    @include font(14px, 36px, 'Rubik-Regular');
+
+                    &_wrap {
+
+                        align-self: flex-start;
+                        margin-left: 0;
+
+                        &::before {
+                            width: 100%;
+                            left: 0;
+                            border-color: $purple_1;
+                            background-color: $black_0;
+                            transform: rotate(0);
+                            z-index: -1;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -796,6 +921,7 @@
                 justify-content: flex-start;
 
                 &_inner {
+                    // justify-content: space-around;
                     width: auto;
                 }
             }

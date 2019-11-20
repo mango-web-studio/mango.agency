@@ -30,8 +30,14 @@ img {
 }
 
 input,
+button,
 textarea {
   outline: none;
+  margin: 0;
+  border-radius: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
 
 @-webkit-keyframes design-1 {
@@ -411,13 +417,6 @@ textarea {
           animation: text-4 1.5s;
 }
 
-@media only screen and (max-width: 500px) {
-  .container {
-    visibility: hidden;
-    position: absolute;
-  }
-}
-
 @media only screen and (max-width: 768px) and (orientation: landscape) {
   .container {
     position: fixed;
@@ -458,6 +457,13 @@ textarea {
   }
   .mobile_header, .mobile_content_main, .mobile_content_portfolio, .mobile_content_development, .mobile_content_about, .mobile_content_contacts {
     display: none;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .container {
+    visibility: hidden;
+    position: absolute;
   }
 }
 
@@ -757,7 +763,7 @@ textarea {
 
 .footer .contacts .tel,
 .footer .contacts .mail {
-  margin-right: 9%;
+  margin-left: 9%;
   color: #c9c9c9;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
@@ -1141,11 +1147,11 @@ textarea {
 }
 
 .mobile_menu_label {
-  font: 1.2rem/1.4rem "Rubik-Regular";
+  font: 1.4rem/1.4rem "Rubik-Regular";
   position: relative;
   padding-left: 7%;
   color: #ffffff;
-  margin-bottom: -20px;
+  margin-bottom: -22px;
   -webkit-transition: 1s;
   -o-transition: 1s;
   transition: 1s;
@@ -1460,10 +1466,10 @@ textarea {
 }
 
 .mobile_menu_label_close {
-  font: 1.2rem/1.4rem "Rubik-Regular";
+  font: 1.4rem/1.4rem "Rubik-Regular";
   position: absolute;
-  top: -webkit-calc(50% + 12px);
-  top: calc(50% + 12px);
+  top: -webkit-calc(50% + 14px);
+  top: calc(50% + 14px);
   left: 20px;
   padding-left: 6%;
   color: #ffffff;
@@ -1861,7 +1867,6 @@ textarea {
     display: none;
     position: relative;
     height: 100%;
-    padding: 50px;
     overflow-y: scroll;
     background-color: rgba(0, 0, 0, 0.95);
     z-index: 1;
@@ -2295,7 +2300,7 @@ textarea {
   height: -webkit-calc(100% + 18px);
   height: calc(100% + 18px);
   padding-bottom: 18px;
-  overflow-x: scroll;
+  overflow-y: hidden;
   -webkit-transition: opacity 1s;
   -o-transition: opacity 1s;
   transition: opacity 1s;
@@ -2953,6 +2958,93 @@ textarea {
   margin-left: 134px;
 }
 
+.development_item_inner .form {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.development_item_inner .form_field {
+  font: 1.8rem/3.2rem "Rubik-Regular";
+  width: 335px;
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid #ffffff;
+  color: #ffffff;
+  background-color: unset;
+}
+
+.development_item_inner .form_field:first-child {
+  margin-bottom: 100px;
+}
+
+.development_item_inner .form_field_wrap {
+  margin-left: 175px;
+}
+
+.development_item_inner .form_field_wrap:first-child {
+  margin-left: 0;
+}
+
+.development_item_inner .form_submit_wrap {
+  margin-left: 90px;
+}
+
+.development_item_inner .form_textarea {
+  resize: horizontal;
+}
+
+.development_item_inner .form_submit {
+  font: 2.2rem/3.6rem "Rubik-Regular";
+  padding: 0 15px;
+  border: 0;
+  background-color: unset;
+  color: #AC54E2;
+  cursor: pointer;
+  text-transform: lowercase;
+}
+
+.development_item_inner .form_submit_wrap {
+  position: relative;
+  -webkit-align-self: flex-end;
+      -ms-flex-item-align: end;
+          align-self: flex-end;
+}
+
+.development_item_inner .form_submit_wrap::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -webkit-calc(15px + 2.4ch);
+  left: calc(15px + 2.4ch);
+  width: 10px;
+  height: 100%;
+  -webkit-transform: rotate(-20deg);
+      -ms-transform: rotate(-20deg);
+          transform: rotate(-20deg);
+  border: 1px solid #ffffff;
+  -webkit-transition: 0.2s, -webkit-transform 0.2s;
+  transition: 0.2s, -webkit-transform 0.2s;
+  -o-transition: 0.2s, transform 0.2s;
+  transition: 0.2s, transform 0.2s;
+  transition: 0.2s, transform 0.2s, -webkit-transform 0.2s;
+}
+
+.development_item_inner .form_submit_wrap:hover::before {
+  width: 100%;
+  left: 0;
+  border-color: #AC54E2;
+  background-color: #000000;
+  -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transition: 0.2s, width 0.2s 0.2s, left 0.2s 0.2s;
+  -o-transition: 0.2s, width 0.2s 0.2s, left 0.2s 0.2s;
+  transition: 0.2s, width 0.2s 0.2s, left 0.2s 0.2s;
+  z-index: -1;
+}
+
 .development_price_list {
   display: -webkit-box;
   display: -webkit-flex;
@@ -3371,6 +3463,68 @@ textarea {
 .mobile_content_development .development_item:last-child .development_form .submit_wrap input {
   margin: 0;
   padding: 0 25px;
+}
+
+.mobile_content_development .development_item_form {
+  margin-left: 0;
+}
+
+.mobile_content_development .development_item_form .form {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.mobile_content_development .development_item_form .form_field {
+  font: 1.4rem/2.5rem "Rubik-Regular";
+  margin-bottom: 15px;
+}
+
+.mobile_content_development .development_item_form .form_field:first-child {
+  margin-bottom: 15px;
+}
+
+.mobile_content_development .development_item_form .form_field_wrap {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: 0;
+}
+
+.mobile_content_development .development_item_form .form_textarea {
+  height: 75px;
+  border: 1px solid #fff;
+  resize: none;
+}
+
+.mobile_content_development .development_item_form .form_submit {
+  font: 1.4rem/3.6rem "Rubik-Regular";
+}
+
+.mobile_content_development .development_item_form .form_submit_wrap {
+  -webkit-align-self: flex-start;
+      -ms-flex-item-align: start;
+          align-self: flex-start;
+  margin-left: 0;
+}
+
+.mobile_content_development .development_item_form .form_submit_wrap::before {
+  width: 100%;
+  left: 0;
+  border-color: #AC54E2;
+  background-color: #000000;
+  -webkit-transform: rotate(0);
+      -ms-transform: rotate(0);
+          transform: rotate(0);
+  z-index: -1;
 }
 
 @media only screen and (max-width: 1440px) {

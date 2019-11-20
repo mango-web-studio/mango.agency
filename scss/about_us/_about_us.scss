@@ -38,7 +38,7 @@
         display: flex;
         height: calc(100% + 18px);
         padding-bottom: 18px;
-        overflow-x: scroll;
+        overflow-y: hidden;
         transition: opacity 1s;
 
         &::-webkit-scrollbar {
