@@ -36,12 +36,4 @@ $(document).ready(function(){
             $(this).slick('slickPrev');
         }
     }));
-
-    // Press Esc to close the menu
-    const checkbox = $("#menu_checkbox");
-    $(document).on('keydown', function(e) {
-        if (e.keyCode == 27) {
-            checkbox.prop("checked", false);
-        }
-    });
 });

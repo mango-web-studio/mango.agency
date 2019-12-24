@@ -73,6 +73,14 @@
 					</li>
 				</ul>
 			</div>
+			<div class="select_wrap header__filter">
+				<select name="filter" id="filter" class="header__filter_select">
+					<option value="all">Все работы</option>
+					<option value="design">Дизайн</option>
+					<option value="development">Разработка</option>
+					<option value="seo">Продвижение</option>
+				</select>	
+			</div>
 			<div class="logo">
 				<a href="index.html" class="logo_link">
 					<svg class="logo_img" width="99" height="50" viewBox="0 0 99 50" xmlns="http://www.w3.org/2000/svg">
@@ -86,7 +94,7 @@
 			<!-- Slider -->
 			<div class="content_portfolio_inner">
 				<div class="content_portfolio_slider">
-					<div class="content_portfolio_slide">
+					<div class="content_portfolio_slide" data-filter="design">
 						<div class="content_portfolio_slide_inner js_slide_popup">
 							<div class="content_portfolio_slide_img_wrap">
 								<img class="content_portfolio_slide_img" src="img/portfolio/slider/1.jpg" alt="slide 1">
@@ -103,7 +111,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="content_portfolio_slide">
+					<div class="content_portfolio_slide" data-filter="development">
 						<div class="content_portfolio_slide_inner js_slide_popup">
 							<div class="content_portfolio_slide_img_wrap">
 								<img class="content_portfolio_slide_img" src="img/portfolio/slider/2.jpg" alt="slide 2">
@@ -120,7 +128,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="content_portfolio_slide">
+					<div class="content_portfolio_slide" data-filter="seo">
 						<div class="content_portfolio_slide_inner js_slide_popup">
 							<div class="content_portfolio_slide_img_wrap">
 								<img class="content_portfolio_slide_img" src="img/portfolio/slider/3.jpg" alt="slide 3">
@@ -137,7 +145,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="content_portfolio_slide">
+					<div class="content_portfolio_slide" data-filter="design">
 						<div class="content_portfolio_slide_inner js_slide_popup">
 							<div class="content_portfolio_slide_img_wrap">
 								<img class="content_portfolio_slide_img" src="img/portfolio/slider/4.jpg" alt="slide 4">
@@ -154,7 +162,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="content_portfolio_slide">
+					<div class="content_portfolio_slide" data-filter="development">
 						<div class="content_portfolio_slide_inner js_slide_popup">
 							<div class="content_portfolio_slide_img_wrap">
 								<img class="content_portfolio_slide_img" src="img/portfolio/slider/5.jpg" alt="slide 5">

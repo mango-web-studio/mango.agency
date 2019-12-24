@@ -1,34 +1,40 @@
-.menu_checkbox:checked ~ .container {
+.menu_checkbox:checked {
+    display: none;
 
-    .menu {
-        opacity: 1;
-        z-index: 1;
+    & ~ .container {
+        background-color: $black_3;
 
-        .menu_link {
-            
-            &::before {
-                height: 20%;
-            }
+        .menu {
+            opacity: 1;
+            z-index: 1;
 
-            &:hover::before {
-                height: 60%;
-                border-color: $white_1;
-            }
+            .menu_link {
+                
+                &::before {
+                    height: 20%;
+                }
 
-            &:hover::after {
-                height: 60%;
-            }
+                &:hover::before {
+                    height: 60%;
+                    border-color: $white_1;
+                }
 
-            .title {
-                top: 0;
-            }
+                &:hover::after {
+                    height: 60%;
+                }
 
-            .subtitle_wrap {
-                top: 0;
+                .title {
+                    top: 0;
+                }
+
+                .subtitle_wrap {
+                    top: 0;
+                }
             }
         }
     }
 }
+
 .menu {
     position: absolute;
     left: 0;

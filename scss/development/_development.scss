@@ -1,18 +1,15 @@
-.development_bg {
-    @include background((url(../img/development/development_bg_1.png), url(../img/development/development_bg.jpg)));
+.menu_checkbox:checked {
 
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-}
+    & ~ .development_bg {
+        filter: blur(20px);
+    }
 
-.menu_checkbox:checked ~ .container {
+    & ~ .container {
 
-    .development_list {
-        opacity: 0;
+        .development_list {
+            filter: blur(20px);
+            opacity: 0;
+        }
     }
 }
 
@@ -21,6 +18,18 @@
     .mobile_content_development {
         opacity: 0;
     }
+}
+
+.development_bg {
+    @include background(url(../img/development/development_bg.jpg));
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transition: 1s;
+    z-index: -1;
 }
 
 .content{
@@ -38,8 +47,9 @@
         display: flex;
         height: calc(100% + 18px);
         padding-bottom: 18px;
-        overflow-x: scroll;
-        transition: opacity 1s;
+        // overflow-x: scroll;
+        overflow-y: hidden;
+        transition: 1s;
 
         &::-webkit-scrollbar {
             display: none;
@@ -71,13 +81,17 @@
             background-size: contain;
             background-position: 0 0;
             padding-right: 4.69%;
+
+            .development_item_inner {
+                width: auto;
+            }
         }
 
         &_inner {
+            position: relative;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            position: relative;
             color: $white_1;
 
             &:first-child {
@@ -120,7 +134,7 @@
                         position: relative;
 
                         &::first-letter {
-                            color: $pink_1;
+                            color: $purple_1;
                         }
 
                         &::before {
@@ -160,6 +174,8 @@
                     }
 
                     &_wrap {
+                        display: flex;
+                        flex-direction: column;
                         margin-left: 175px;
 
                         &:first-child {

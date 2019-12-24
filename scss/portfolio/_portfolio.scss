@@ -1,27 +1,28 @@
+.menu_checkbox:checked {
+
+    & ~ .portfolio_bg {
+        filter: blur(20px);
+    }
+
+    & ~ .container {
+
+        .content_portfolio_inner {
+            filter: blur(20px);
+            opacity: 0;
+        }
+    }
+}
+
 .portfolio_bg {
-    @include background((url(../img/portfolio/portfolio_bg_2.png), url(../img/portfolio/portfolio_bg_1.png), url(../img/portfolio/portfolio_bg.jpg)));
+    @include background((url(../img/portfolio/portfolio_bg_2.png), url(../img/portfolio/portfolio_bg.jpg)));
 
     position: fixed;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
+    transition: 1s;
     z-index: -1;
-}
-
-.menu_checkbox {
-
-    &:checked ~ .container {
-
-        .content_portfolio_slider {
-            filter: brightness(0.4);
-            opacity: 0.7;
-        }
-
-        .content_portfolio_slide_title_wrap {
-            opacity: 0;
-        }
-    }
 }
 
 .gallery_popup {
@@ -69,6 +70,7 @@
         &_inner {
             position: relative;
             height: 100%;
+            transition: 1s;
         }
 
         &_slider {
@@ -112,7 +114,7 @@
                     color: $white_1;
 
                     &:first-child {
-                        color: $pink_1;
+                        color: $purple_1;
                     }
                 }
             }
@@ -141,6 +143,10 @@
                 transition: 0.5s;
             }
         }
+
+        .slide-hide {
+            display: none;
+        }
     }
 }
 
@@ -155,7 +161,6 @@
 .slick-slide {
     outline: none;
 }
-
 
 // screen width <=1366px
 @media only screen and (max-width: 1366px) {
@@ -211,7 +216,7 @@
         position: relative;
         height: 100%;
         overflow-y: scroll;
-        background-color: $black_5;
+        background-color: $black_3;
         z-index: 1;
 
         &_img {

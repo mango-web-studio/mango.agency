@@ -13,9 +13,6 @@
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 1;
-        // border: 2px solid $gray_4;
-        // border-radius: 50%;
-        // padding: 50px 40px;
 
         canvas {
             position: absolute;
@@ -32,16 +29,6 @@
         transform: translate(-50%, -50%);
         z-index: 1;
     }
-
-    // &_percent {
-    //     @include font(340px, 340px, 'Roboto-Bold');
-
-    //     position: absolute;
-    //     top: 50%;
-    //     left: 50%;
-    //     transform: translate(-50%, -50%);
-    //     color: $black_4;
-    // }
 
     .progress-percentage {
         @include font(340px, 340px, 'Roboto-Bold');
