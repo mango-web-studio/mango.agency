@@ -149,51 +149,18 @@ window.onload = function() {
         }
     }
 
-    // Filter for slider
-    let filter = document.getElementById('filter');
-    if (filter) {
-        let slidesArr  = document.querySelectorAll('.content_portfolio_slide'),
-            filterWrap = filter.parentElement,
-            divItemArr = filterWrap.querySelectorAll('.select-items div');
 
-        for (let i = 0; i < divItemArr.length; i++) {
-            if (divItemArr[i].getAttribute('data-filter') == 'all') {
-                divItemArr[i].addEventListener('click', function() {
-                    for (let i = 0; i < slidesArr.length; i++) {
-                        slidesArr[i].classList.remove('slide-hide');
-                    }
-                });
-            }
-            if (divItemArr[i].getAttribute('data-filter') == 'design') {
-                divItemArr[i].addEventListener('click', function() {
-                    for (let i = 0; i < slidesArr.length; i++) {
-                        slidesArr[i].classList.remove('slide-hide');
-                        if (slidesArr[i].getAttribute('data-filter') !== 'design') {
-                            slidesArr[i].classList.add('slide-hide');
-                        }
-                    }
-                });
-            }
-            if (divItemArr[i].getAttribute('data-filter') == 'development') {
-                divItemArr[i].addEventListener('click', function() {
-                    for (let i = 0; i < slidesArr.length; i++) {
-                        slidesArr[i].classList.remove('slide-hide');
-                        if (slidesArr[i].getAttribute('data-filter') !== 'development') {
-                            slidesArr[i].classList.add('slide-hide');
-                        }
-                    }
-                });
-            }
-            if (divItemArr[i].getAttribute('data-filter') == 'seo') {
-                divItemArr[i].addEventListener('click', function() {
-                    for (let i = 0; i < slidesArr.length; i++) {
-                        slidesArr[i].classList.remove('slide-hide');
-                        if (slidesArr[i].getAttribute('data-filter') !== 'seo') {
-                            slidesArr[i].classList.add('slide-hide');
-                        }
-                    }
-                });
-            }
+// Slider filter.
+    let filtered = false;
+
+    $('.select-items div').on('click',function(){
+        $('.select-items div').removeClass('active');
+        let filter = $(this).attr('data-filter');
+        if (filter == 'all') {
+            $('.content_portfolio_slider').slick('slickUnfilter');
+        } else {
+            $('.content_portfolio_slider').slick('slickUnfilter').slick('slickFilter', `[data-filter=${filter}]`);
         }
-    }
+        filtered = true;
+    });
 };
